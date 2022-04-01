@@ -48,11 +48,17 @@ namespace FeLogin {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"inicio";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// inicio
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(777, 462);
+			this->Name = L"inicio";
+			this->Text = L"inicio";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

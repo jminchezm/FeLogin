@@ -1,0 +1,3 @@
+C:\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.AssemblyReference.cache
+C:\FeLogin\FeLogin\x64\Debug\FeLogin.inicio.resources
+C:\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateResource.cache
