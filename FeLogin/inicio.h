@@ -36,6 +36,7 @@ namespace FeLogin {
 		}
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::RadioButton^ radioButton1;
+	private: System::Windows::Forms::Panel^ panel1;
 	protected:
 
 	private:
@@ -53,13 +54,15 @@ namespace FeLogin {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(271, 111);
+			this->button1->Location = System::Drawing::Point(361, 137);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(295, 131);
+			this->button1->Size = System::Drawing::Size(393, 161);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"GRUPO 8";
 			this->button1->UseVisualStyleBackColor = true;
@@ -67,21 +70,32 @@ namespace FeLogin {
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(348, 293);
+			this->radioButton1->Location = System::Drawing::Point(464, 361);
+			this->radioButton1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(88, 17);
+			this->radioButton1->Size = System::Drawing::Size(109, 20);
 			this->radioButton1->TabIndex = 1;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Siiiiiiiiiiuuuuuu";
 			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Red;
+			this->panel1->Location = System::Drawing::Point(19, 22);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(237, 545);
+			this->panel1->TabIndex = 2;
+			// 
 			// inicio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(777, 462);
+			this->ClientSize = System::Drawing::Size(1036, 569);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->radioButton1);
 			this->Controls->Add(this->button1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"inicio";
 			this->Text = L"inicio";
 			this->Load += gcnew System::EventHandler(this, &inicio::inicio_Load);
