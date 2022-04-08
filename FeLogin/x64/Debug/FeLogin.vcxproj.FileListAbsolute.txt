@@ -5,3 +5,7 @@ C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.Asse
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.SuggestedBindingRedirects.cache
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.inicio.resources
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateResource.cache
+C:\derecho\FeLogin\x64\Debug\FeLogin.vcxproj.AssemblyReference.cache
+C:\derecho\FeLogin\x64\Debug\FeLogin.vcxproj.SuggestedBindingRedirects.cache
+C:\derecho\FeLogin\x64\Debug\FeLogin.inicio.resources
+C:\derecho\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateResource.cache
