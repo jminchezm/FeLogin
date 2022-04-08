@@ -35,6 +35,7 @@ namespace FeLogin {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::RadioButton^ radioButton1;
 	protected:
 
 	private:
@@ -51,6 +52,7 @@ namespace FeLogin {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -62,16 +64,29 @@ namespace FeLogin {
 			this->button1->Text = L"GRUPO 8";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
+			// radioButton1
+			// 
+			this->radioButton1->AutoSize = true;
+			this->radioButton1->Location = System::Drawing::Point(348, 293);
+			this->radioButton1->Name = L"radioButton1";
+			this->radioButton1->Size = System::Drawing::Size(88, 17);
+			this->radioButton1->TabIndex = 1;
+			this->radioButton1->TabStop = true;
+			this->radioButton1->Text = L"Siiiiiiiiiiuuuuuu";
+			this->radioButton1->UseVisualStyleBackColor = true;
+			// 
 			// inicio
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(777, 462);
+			this->Controls->Add(this->radioButton1);
 			this->Controls->Add(this->button1);
 			this->Name = L"inicio";
 			this->Text = L"inicio";
 			this->Load += gcnew System::EventHandler(this, &inicio::inicio_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
