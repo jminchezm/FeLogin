@@ -56,6 +56,8 @@ namespace FeLogin {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Button^ btnsalir;
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+
 
 
 
@@ -83,6 +85,7 @@ namespace FeLogin {
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->lblCrearU = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
 			this->btnsalir = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -95,11 +98,12 @@ namespace FeLogin {
 			this->txtContraseña = (gcnew System::Windows::Forms::TextBox());
 			this->lblIntrucciones = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// linkLabel1
@@ -111,6 +115,7 @@ namespace FeLogin {
 			this->linkLabel1->TabIndex = 8;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"Preciona aqui";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &inicio::linkLabel1_LinkClicked);
 			// 
 			// lblCrearU
 			// 
@@ -146,6 +151,17 @@ namespace FeLogin {
 			this->panel2->TabIndex = 1;
 			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel2_Paint);
 			// 
+			// progressBar1
+			// 
+			this->progressBar1->BackColor = System::Drawing::Color::DeepSkyBlue;
+			this->progressBar1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->progressBar1->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->progressBar1->Location = System::Drawing::Point(0, 459);
+			this->progressBar1->Name = L"progressBar1";
+			this->progressBar1->Size = System::Drawing::Size(476, 3);
+			this->progressBar1->TabIndex = 10;
+			this->progressBar1->Click += gcnew System::EventHandler(this, &inicio::progressBar1_Click);
+			// 
 			// btnsalir
 			// 
 			this->btnsalir->BackColor = System::Drawing::Color::White;
@@ -166,7 +182,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\derecho\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -177,7 +193,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\derecho\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -303,6 +319,7 @@ namespace FeLogin {
 			this->panel1->AutoSize = true;
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->linkLabel1);
 			this->panel1->Controls->Add(this->lblIntrucciones);
 			this->panel1->Controls->Add(this->lblCrearU);
@@ -311,16 +328,18 @@ namespace FeLogin {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(791, 462);
 			this->panel1->TabIndex = 0;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel1_Paint);
 			// 
-			// progressBar1
+			// pictureBox3
 			// 
-			this->progressBar1->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->progressBar1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->progressBar1->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->progressBar1->Location = System::Drawing::Point(0, 459);
-			this->progressBar1->Name = L"progressBar1";
-			this->progressBar1->Size = System::Drawing::Size(476, 3);
-			this->progressBar1->TabIndex = 10;
+			this->pictureBox3->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\logo.png";
+			this->pictureBox3->Location = System::Drawing::Point(73, 11);
+			this->pictureBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(154, 185);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox3->TabIndex = 9;
+			this->pictureBox3->TabStop = false;
 			// 
 			// inicio
 			// 
@@ -343,6 +362,7 @@ namespace FeLogin {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -393,6 +413,14 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 	{
 		MessageBox::Show("Usuario Incorrecto o Campo Vacío", "Error");
 	}
+}
+private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	linkLabel1->LinkVisited = true;
+	System::Diagnostics::Process::Start("https://docs.google.com/forms/d/e/1FAIpQLSejgZnzFvppYJmN-XjvP8KN0Gqxuj6QaPRpYyY3j_W1NglQeQ/viewform");
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void progressBar1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
