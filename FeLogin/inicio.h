@@ -1,4 +1,5 @@
 #pragma once
+#include "formulario.h"
 
 namespace FeLogin {
 
@@ -46,7 +47,7 @@ namespace FeLogin {
 
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 
-	private: System::Windows::Forms::LinkLabel^ linkLabel1;
+
 	private: System::Windows::Forms::Panel^ panel2;
 
 	private: System::Windows::Forms::Label^ lblIntrucciones;
@@ -56,7 +57,9 @@ namespace FeLogin {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Button^ btnsalir;
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::Button^ btnredirec;
+
+
 
 
 
@@ -82,7 +85,6 @@ namespace FeLogin {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(inicio::typeid));
-			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->lblCrearU = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
@@ -98,24 +100,12 @@ namespace FeLogin {
 			this->txtContraseña = (gcnew System::Windows::Forms::TextBox());
 			this->lblIntrucciones = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->btnredirec = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// linkLabel1
-			// 
-			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(143, 299);
-			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(72, 13);
-			this->linkLabel1->TabIndex = 8;
-			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"Preciona aqui";
-			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &inicio::linkLabel1_LinkClicked);
 			// 
 			// lblCrearU
 			// 
@@ -182,7 +172,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\Miguel 07\\source\\repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -193,7 +183,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\Miguel 07\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -319,8 +309,7 @@ namespace FeLogin {
 			this->panel1->AutoSize = true;
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->Controls->Add(this->pictureBox3);
-			this->panel1->Controls->Add(this->linkLabel1);
+			this->panel1->Controls->Add(this->btnredirec);
 			this->panel1->Controls->Add(this->lblIntrucciones);
 			this->panel1->Controls->Add(this->lblCrearU);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -330,16 +319,21 @@ namespace FeLogin {
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel1_Paint);
 			// 
-			// pictureBox3
+			// btnredirec
 			// 
-			this->pictureBox3->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\logo.png";
-			this->pictureBox3->Location = System::Drawing::Point(73, 11);
-			this->pictureBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(154, 185);
-			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox3->TabIndex = 9;
-			this->pictureBox3->TabStop = false;
+			this->btnredirec->BackColor = System::Drawing::Color::White;
+			this->btnredirec->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnredirec.BackgroundImage")));
+			this->btnredirec->Font = (gcnew System::Drawing::Font(L"Segoe UI", 6.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnredirec->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnredirec->Location = System::Drawing::Point(144, 292);
+			this->btnredirec->Name = L"btnredirec";
+			this->btnredirec->Size = System::Drawing::Size(87, 23);
+			this->btnredirec->TabIndex = 8;
+			this->btnredirec->Text = L"Precione aqui";
+			this->btnredirec->UseVisualStyleBackColor = false;
+			this->btnredirec->Click += gcnew System::EventHandler(this, &inicio::btnredirec_Click);
 			// 
 			// inicio
 			// 
@@ -362,7 +356,6 @@ namespace FeLogin {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -415,12 +408,15 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 	}
 }
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-	linkLabel1->LinkVisited = true;
-	System::Diagnostics::Process::Start("https://docs.google.com/forms/d/e/1FAIpQLSejgZnzFvppYJmN-XjvP8KN0Gqxuj6QaPRpYyY3j_W1NglQeQ/viewform");
+
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void progressBar1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnredirec_Click(System::Object^ sender, System::EventArgs^ e) {
+	FeLogin::formulario^ formu = gcnew FeLogin::formulario();
+	formu->Show();
 }
 };
 }

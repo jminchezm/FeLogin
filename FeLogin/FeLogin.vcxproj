@@ -120,14 +120,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="formulario.cpp" />
     <ClCompile Include="inicio.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="formulario.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formulario.resx">
+      <DependentUpon>formulario.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.h</DependentUpon>
     </EmbeddedResource>

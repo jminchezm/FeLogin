@@ -1,1 +1,5 @@
-﻿  FeLogin.vcxproj -> C:\Users\Usuario\source\repos\FeLogin\x64\Debug\FeLogin.exe
+﻿  formulario.cpp
+  inicio.cpp
+  Generando código...
+  formulario.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  FeLogin.vcxproj -> C:\Users\Miguel 07\source\repos\FeLogin\x64\Debug\FeLogin.exe
