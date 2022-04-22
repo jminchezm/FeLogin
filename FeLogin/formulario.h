@@ -1,5 +1,6 @@
 #pragma once
 //#include "inicio.h"
+#include "Conexion.h"
 
 namespace FeLogin {
 
@@ -43,17 +44,26 @@ namespace FeLogin {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::NumericUpDown^ numEdad;
+	private: System::Windows::Forms::ComboBox^ cboSexo;
+	private: System::Windows::Forms::TextBox^ txtDireccion;
 
 
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox10;
-	private: System::Windows::Forms::TextBox^ textBox9;
+
+
+
+	private: System::Windows::Forms::TextBox^ txtTelefono;
+
+	private: System::Windows::Forms::TextBox^ txtApellido2;
+
+	private: System::Windows::Forms::TextBox^ txtApellido1;
+
+	private: System::Windows::Forms::TextBox^ txtNombre2;
+
+	private: System::Windows::Forms::TextBox^ txtNombre1;
+
+	private: System::Windows::Forms::TextBox^ txtDpi;
+
 	private: System::Windows::Forms::Label^ lbdpi;
 	private: System::Windows::Forms::Label^ lb1nombre;
 	private: System::Windows::Forms::Label^ lb2nombre;
@@ -153,19 +163,20 @@ namespace FeLogin {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(formulario::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btnCancelar = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->numEdad = (gcnew System::Windows::Forms::NumericUpDown());
+			this->cboSexo = (gcnew System::Windows::Forms::ComboBox());
+			this->txtDireccion = (gcnew System::Windows::Forms::TextBox());
+			this->txtTelefono = (gcnew System::Windows::Forms::TextBox());
+			this->txtApellido2 = (gcnew System::Windows::Forms::TextBox());
+			this->txtApellido1 = (gcnew System::Windows::Forms::TextBox());
+			this->txtNombre2 = (gcnew System::Windows::Forms::TextBox());
+			this->txtNombre1 = (gcnew System::Windows::Forms::TextBox());
+			this->txtDpi = (gcnew System::Windows::Forms::TextBox());
 			this->lbdpi = (gcnew System::Windows::Forms::Label());
 			this->lb1nombre = (gcnew System::Windows::Forms::Label());
 			this->lb2nombre = (gcnew System::Windows::Forms::Label());
@@ -175,12 +186,11 @@ namespace FeLogin {
 			this->lbsexosi = (gcnew System::Windows::Forms::Label());
 			this->lbtelefono = (gcnew System::Windows::Forms::Label());
 			this->lbdireccion = (gcnew System::Windows::Forms::Label());
-			this->btnCancelar = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numEdad))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -194,6 +204,18 @@ namespace FeLogin {
 			this->panel1->Size = System::Drawing::Size(231, 527);
 			this->panel1->TabIndex = 0;
 			// 
+			// btnCancelar
+			// 
+			this->btnCancelar->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnCancelar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F));
+			this->btnCancelar->Location = System::Drawing::Point(0, 252);
+			this->btnCancelar->Name = L"btnCancelar";
+			this->btnCancelar->Size = System::Drawing::Size(231, 33);
+			this->btnCancelar->TabIndex = 191;
+			this->btnCancelar->Text = L"Cancelar";
+			this->btnCancelar->UseVisualStyleBackColor = true;
+			this->btnCancelar->Click += gcnew System::EventHandler(this, &formulario::btnCancelar_Click_1);
+			// 
 			// button1
 			// 
 			this->button1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -204,6 +226,7 @@ namespace FeLogin {
 			this->button1->TabIndex = 190;
 			this->button1->Text = L"Guardar";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &formulario::button1_Click);
 			// 
 			// panel3
 			// 
@@ -229,15 +252,15 @@ namespace FeLogin {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->panel2->Controls->Add(this->numericUpDown1);
-			this->panel2->Controls->Add(this->comboBox1);
-			this->panel2->Controls->Add(this->textBox8);
-			this->panel2->Controls->Add(this->textBox5);
-			this->panel2->Controls->Add(this->textBox2);
-			this->panel2->Controls->Add(this->textBox3);
-			this->panel2->Controls->Add(this->textBox4);
-			this->panel2->Controls->Add(this->textBox10);
-			this->panel2->Controls->Add(this->textBox9);
+			this->panel2->Controls->Add(this->numEdad);
+			this->panel2->Controls->Add(this->cboSexo);
+			this->panel2->Controls->Add(this->txtDireccion);
+			this->panel2->Controls->Add(this->txtTelefono);
+			this->panel2->Controls->Add(this->txtApellido2);
+			this->panel2->Controls->Add(this->txtApellido1);
+			this->panel2->Controls->Add(this->txtNombre2);
+			this->panel2->Controls->Add(this->txtNombre1);
+			this->panel2->Controls->Add(this->txtDpi);
 			this->panel2->Controls->Add(this->lbdpi);
 			this->panel2->Controls->Add(this->lb1nombre);
 			this->panel2->Controls->Add(this->lb2nombre);
@@ -253,91 +276,91 @@ namespace FeLogin {
 			this->panel2->Size = System::Drawing::Size(570, 527);
 			this->panel2->TabIndex = 1;
 			// 
-			// numericUpDown1
+			// numEdad
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(246, 296);
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(95, 20);
-			this->numericUpDown1->TabIndex = 191;
+			this->numEdad->Location = System::Drawing::Point(246, 296);
+			this->numEdad->Name = L"numEdad";
+			this->numEdad->Size = System::Drawing::Size(95, 20);
+			this->numEdad->TabIndex = 191;
 			// 
-			// comboBox1
+			// cboSexo
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"M", L"F" });
-			this->comboBox1->Location = System::Drawing::Point(413, 295);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(95, 21);
-			this->comboBox1->TabIndex = 190;
+			this->cboSexo->FormattingEnabled = true;
+			this->cboSexo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"M", L"F" });
+			this->cboSexo->Location = System::Drawing::Point(413, 295);
+			this->cboSexo->Name = L"cboSexo";
+			this->cboSexo->Size = System::Drawing::Size(95, 21);
+			this->cboSexo->TabIndex = 190;
 			// 
-			// textBox8
+			// txtDireccion
 			// 
-			this->textBox8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtDireccion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox8->ForeColor = System::Drawing::Color::Gray;
-			this->textBox8->Location = System::Drawing::Point(246, 372);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(262, 25);
-			this->textBox8->TabIndex = 186;
+			this->txtDireccion->ForeColor = System::Drawing::Color::Gray;
+			this->txtDireccion->Location = System::Drawing::Point(246, 372);
+			this->txtDireccion->Name = L"txtDireccion";
+			this->txtDireccion->Size = System::Drawing::Size(262, 25);
+			this->txtDireccion->TabIndex = 186;
 			// 
-			// textBox5
+			// txtTelefono
 			// 
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtTelefono->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->ForeColor = System::Drawing::Color::Gray;
-			this->textBox5->Location = System::Drawing::Point(246, 332);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(262, 25);
-			this->textBox5->TabIndex = 185;
+			this->txtTelefono->ForeColor = System::Drawing::Color::Gray;
+			this->txtTelefono->Location = System::Drawing::Point(246, 332);
+			this->txtTelefono->Name = L"txtTelefono";
+			this->txtTelefono->Size = System::Drawing::Size(262, 25);
+			this->txtTelefono->TabIndex = 185;
 			// 
-			// textBox2
+			// txtApellido2
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtApellido2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->ForeColor = System::Drawing::Color::Gray;
-			this->textBox2->Location = System::Drawing::Point(246, 256);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(262, 25);
-			this->textBox2->TabIndex = 184;
+			this->txtApellido2->ForeColor = System::Drawing::Color::Gray;
+			this->txtApellido2->Location = System::Drawing::Point(246, 256);
+			this->txtApellido2->Name = L"txtApellido2";
+			this->txtApellido2->Size = System::Drawing::Size(262, 25);
+			this->txtApellido2->TabIndex = 184;
 			// 
-			// textBox3
+			// txtApellido1
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtApellido1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->ForeColor = System::Drawing::Color::Gray;
-			this->textBox3->Location = System::Drawing::Point(246, 216);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(262, 25);
-			this->textBox3->TabIndex = 183;
+			this->txtApellido1->ForeColor = System::Drawing::Color::Gray;
+			this->txtApellido1->Location = System::Drawing::Point(246, 216);
+			this->txtApellido1->Name = L"txtApellido1";
+			this->txtApellido1->Size = System::Drawing::Size(262, 25);
+			this->txtApellido1->TabIndex = 183;
 			// 
-			// textBox4
+			// txtNombre2
 			// 
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtNombre2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->ForeColor = System::Drawing::Color::Gray;
-			this->textBox4->Location = System::Drawing::Point(246, 176);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(262, 25);
-			this->textBox4->TabIndex = 182;
+			this->txtNombre2->ForeColor = System::Drawing::Color::Gray;
+			this->txtNombre2->Location = System::Drawing::Point(246, 176);
+			this->txtNombre2->Name = L"txtNombre2";
+			this->txtNombre2->Size = System::Drawing::Size(262, 25);
+			this->txtNombre2->TabIndex = 182;
 			// 
-			// textBox10
+			// txtNombre1
 			// 
-			this->textBox10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtNombre1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox10->ForeColor = System::Drawing::Color::Gray;
-			this->textBox10->Location = System::Drawing::Point(246, 140);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(262, 25);
-			this->textBox10->TabIndex = 181;
+			this->txtNombre1->ForeColor = System::Drawing::Color::Gray;
+			this->txtNombre1->Location = System::Drawing::Point(246, 140);
+			this->txtNombre1->Name = L"txtNombre1";
+			this->txtNombre1->Size = System::Drawing::Size(262, 25);
+			this->txtNombre1->TabIndex = 181;
 			// 
-			// textBox9
+			// txtDpi
 			// 
-			this->textBox9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtDpi->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox9->ForeColor = System::Drawing::Color::Gray;
-			this->textBox9->Location = System::Drawing::Point(246, 100);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(262, 25);
-			this->textBox9->TabIndex = 180;
+			this->txtDpi->ForeColor = System::Drawing::Color::Gray;
+			this->txtDpi->Location = System::Drawing::Point(246, 100);
+			this->txtDpi->Name = L"txtDpi";
+			this->txtDpi->Size = System::Drawing::Size(262, 25);
+			this->txtDpi->TabIndex = 180;
 			// 
 			// lbdpi
 			// 
@@ -456,18 +479,6 @@ namespace FeLogin {
 			this->lbdireccion->TabIndex = 171;
 			this->lbdireccion->Text = L"Direccion:";
 			// 
-			// btnCancelar
-			// 
-			this->btnCancelar->Dock = System::Windows::Forms::DockStyle::Top;
-			this->btnCancelar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F));
-			this->btnCancelar->Location = System::Drawing::Point(0, 252);
-			this->btnCancelar->Name = L"btnCancelar";
-			this->btnCancelar->Size = System::Drawing::Size(231, 33);
-			this->btnCancelar->TabIndex = 191;
-			this->btnCancelar->Text = L"Cancelar";
-			this->btnCancelar->UseVisualStyleBackColor = true;
-			this->btnCancelar->Click += gcnew System::EventHandler(this, &formulario::btnCancelar_Click_1);
-			// 
 			// formulario
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -485,7 +496,7 @@ namespace FeLogin {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numEdad))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -506,6 +517,13 @@ private: System::Void btnCancelar_Click_1(System::Object^ sender, System::EventA
 	/*formulario::Visible = false;//cerramos un formulario
 	FeLogin::inicio^ ini = gcnew FeLogin::inicio();
 	ini->Show();*/
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	Conexion datosUsuario;
+	datosUsuario.Insertar(Convert::ToInt64(txtDpi->Text), txtNombre1->Text, txtNombre2->Text, txtApellido1->Text, txtApellido2->Text, Convert::ToInt16(numEdad->Text), cboSexo->Text, Convert::ToInt64(txtTelefono->Text), txtDireccion->Text);
+	MessageBox::Show("Registro guardado...");
+
+	System::Diagnostics::Process::Start("chrome.exe", "https://docs.google.com/forms/d/e/1FAIpQLSd_BNFCBme_XeeeUO1dv1IX1Fn4N84GgElizNpskced-IEOAA/viewform");
 }
 };
 }

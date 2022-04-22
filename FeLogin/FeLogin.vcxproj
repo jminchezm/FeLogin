@@ -120,10 +120,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Conexion.cpp" />
     <ClCompile Include="formulario.cpp" />
     <ClCompile Include="inicio.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Conexion.h" />
     <ClInclude Include="formulario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
