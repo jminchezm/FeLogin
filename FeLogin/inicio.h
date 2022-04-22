@@ -57,7 +57,8 @@ namespace FeLogin {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Button^ btnsalir;
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
-	private: System::Windows::Forms::Button^ btnredirec;
+
+	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 
 
 
@@ -100,7 +101,7 @@ namespace FeLogin {
 			this->txtContraseña = (gcnew System::Windows::Forms::TextBox());
 			this->lblIntrucciones = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->btnredirec = (gcnew System::Windows::Forms::Button());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -309,7 +310,7 @@ namespace FeLogin {
 			this->panel1->AutoSize = true;
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->Controls->Add(this->btnredirec);
+			this->panel1->Controls->Add(this->linkLabel1);
 			this->panel1->Controls->Add(this->lblIntrucciones);
 			this->panel1->Controls->Add(this->lblCrearU);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -319,21 +320,16 @@ namespace FeLogin {
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel1_Paint);
 			// 
-			// btnredirec
+			// linkLabel1
 			// 
-			this->btnredirec->BackColor = System::Drawing::Color::White;
-			this->btnredirec->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnredirec.BackgroundImage")));
-			this->btnredirec->Font = (gcnew System::Drawing::Font(L"Segoe UI", 6.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnredirec->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnredirec->Location = System::Drawing::Point(144, 292);
-			this->btnredirec->Name = L"btnredirec";
-			this->btnredirec->Size = System::Drawing::Size(87, 23);
-			this->btnredirec->TabIndex = 8;
-			this->btnredirec->Text = L"Precione aqui";
-			this->btnredirec->UseVisualStyleBackColor = false;
-			this->btnredirec->Click += gcnew System::EventHandler(this, &inicio::btnredirec_Click);
+			this->linkLabel1->AutoSize = true;
+			this->linkLabel1->Location = System::Drawing::Point(145, 299);
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->Size = System::Drawing::Size(74, 13);
+			this->linkLabel1->TabIndex = 9;
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->Text = L"Precione aquí";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &inicio::linkLabel1_LinkClicked_1);
 			// 
 			// inicio
 			// 
@@ -414,7 +410,10 @@ private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Form
 }
 private: System::Void progressBar1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void btnredirec_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void linkLabel1_LinkClicked_1(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	//inicio::Close();//cerramos un formulario
+	//inicio::Visible = false;//cerramos un formulario
 	FeLogin::formulario^ formu = gcnew FeLogin::formulario();
 	formu->Show();
 }
