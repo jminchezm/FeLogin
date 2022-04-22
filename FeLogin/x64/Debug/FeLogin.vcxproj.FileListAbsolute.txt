@@ -18,3 +18,8 @@ C:\Users\Miguel 07\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.Sugges
 C:\Users\Miguel 07\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.inicio.resources
 C:\Users\Miguel 07\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateResource.cache
 C:\Users\Miguel 07\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resources
+C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.AssemblyReference.cache
+C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resources
+C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.inicio.resources
+C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateResource.cache

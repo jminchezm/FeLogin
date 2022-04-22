@@ -172,7 +172,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\Miguel 07\\source\\repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -183,7 +183,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\Miguel 07\\source\\repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";

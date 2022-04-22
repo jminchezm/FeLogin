@@ -363,7 +363,7 @@ namespace FeLogin {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->ImageLocation = L"C:\\Users\\Miguel 07\\source\\repos\\FeLogin\\img\\zz.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\zz.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(609, 168);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -376,8 +376,7 @@ namespace FeLogin {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::White;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackColor = System::Drawing::Color::DarkOrange;
 			this->ClientSize = System::Drawing::Size(801, 527);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->btncancelar);
