@@ -1,7 +1,7 @@
 #pragma once
 //#include "inicio.h"
 #include "Conexion.h"
-
+//#include "winuser.h"
 namespace FeLogin {
 
 	using namespace System;
@@ -74,6 +74,8 @@ namespace FeLogin {
 	private: System::Windows::Forms::Label^ lbtelefono;
 	private: System::Windows::Forms::Label^ lbdireccion;
 	private: System::Windows::Forms::Button^ btnCancelar;
+	private: System::Windows::Forms::LinkLabel^ linkLabel1;
+	private: System::Windows::Forms::Label^ label1;
 
 	protected:
 
@@ -163,6 +165,8 @@ namespace FeLogin {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(formulario::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnCancelar = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
@@ -195,6 +199,8 @@ namespace FeLogin {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->linkLabel1);
+			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->btnCancelar);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->panel3);
@@ -203,6 +209,30 @@ namespace FeLogin {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(231, 527);
 			this->panel1->TabIndex = 0;
+			// 
+			// linkLabel1
+			// 
+			this->linkLabel1->AutoSize = true;
+			this->linkLabel1->Location = System::Drawing::Point(68, 354);
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->Size = System::Drawing::Size(72, 13);
+			this->linkLabel1->TabIndex = 193;
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->Text = L"Precione aqui";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &formulario::linkLabel1_LinkClicked);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Black;
+			this->label1->Location = System::Drawing::Point(12, 318);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(163, 51);
+			this->label1->TabIndex = 192;
+			this->label1->Text = L"Si ya llenó estos campos \r\ndirige se al formulario \r\nen ínea ";
 			// 
 			// btnCancelar
 			// 
@@ -240,7 +270,7 @@ namespace FeLogin {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\zz.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\Usuario\\source\\repos\\FeLogin\\img\\zz.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(46, 42);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -492,6 +522,7 @@ namespace FeLogin {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"formulario";
 			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel2->ResumeLayout(false);
@@ -521,8 +552,27 @@ private: System::Void btnCancelar_Click_1(System::Object^ sender, System::EventA
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	Conexion datosUsuario;
 	datosUsuario.Insertar(Convert::ToInt64(txtDpi->Text), txtNombre1->Text, txtNombre2->Text, txtApellido1->Text, txtApellido2->Text, Convert::ToInt16(numEdad->Text), cboSexo->Text, Convert::ToInt64(txtTelefono->Text), txtDireccion->Text);
-	MessageBox::Show("Registro guardado...");
+	
+	MessageBox::Show("Sus datos han sido guardados correctamente", "Registro guardado",MessageBoxButtons::OK, MessageBoxIcon::Information);
 
+
+	if (MessageBox::Show("A continuación se le presenta un formuario el cual debe de llenar con la informacion requerida. Es obligatorio el llenado del formulario para poderle genera su usuario y contraseña.", "Información",
+		MessageBoxButtons::OKCancel, MessageBoxIcon::Information)==System::Windows::Forms::DialogResult::OK)
+	{
+		linkLabel1->LinkVisited = true;
+		System::Diagnostics::Process::Start("https://docs.google.com/forms/d/e/1FAIpQLSd_BNFCBme_XeeeUO1dv1IX1Fn4N84GgElizNpskced-IEOAA/viewform");
+	}
+	else
+	{
+		MessageBox::Show("Puedes llenar el mismo formulario mas tarde   ", "Información",
+			MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+
+
+	
+}
+private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	
 	System::Diagnostics::Process::Start("chrome.exe", "https://docs.google.com/forms/d/e/1FAIpQLSd_BNFCBme_XeeeUO1dv1IX1Fn4N84GgElizNpskced-IEOAA/viewform");
 }
 };

@@ -59,6 +59,7 @@ namespace FeLogin {
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
 
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
 
 
 
@@ -102,10 +103,12 @@ namespace FeLogin {
 			this->lblIntrucciones = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// lblCrearU
@@ -173,7 +176,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -184,7 +187,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\Usuario\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -310,6 +313,7 @@ namespace FeLogin {
 			this->panel1->AutoSize = true;
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->linkLabel1);
 			this->panel1->Controls->Add(this->lblIntrucciones);
 			this->panel1->Controls->Add(this->lblCrearU);
@@ -330,6 +334,16 @@ namespace FeLogin {
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"Precione aquí";
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &inicio::linkLabel1_LinkClicked_1);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\logo.png";
+			this->pictureBox3->Location = System::Drawing::Point(46, 8);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(203, 197);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox3->TabIndex = 10;
+			this->pictureBox3->TabStop = false;
 			// 
 			// inicio
 			// 
@@ -352,6 +366,7 @@ namespace FeLogin {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -401,6 +416,8 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 	else
 	{
 		MessageBox::Show("Usuario Incorrecto o Campo Vacío", "Error");
+		
+		
 	}
 }
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
