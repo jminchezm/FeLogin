@@ -1,7 +1,8 @@
 ﻿  formulario.cpp
-C:\Users\Usuario\source\repos\FeLogin\FeLogin\formulario.h(554,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\formulario.h(589,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
   inicio.cpp
-C:\Users\Usuario\source\repos\FeLogin\FeLogin\formulario.h(554,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\formulario.h(589,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
+  verificacion.cpp
   Generando código...
   Conexion.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  FeLogin.vcxproj -> C:\Users\Usuario\source\repos\FeLogin\x64\Debug\FeLogin.exe
+  FeLogin.vcxproj -> C:\Users\johnychiroy\source\repos\FeLogin\x64\Debug\FeLogin.exe

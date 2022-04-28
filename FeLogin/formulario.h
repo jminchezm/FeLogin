@@ -1,6 +1,7 @@
 #pragma once
 //#include "inicio.h"
 #include "Conexion.h"
+#include "verificacion.h"
 //#include "winuser.h"
 namespace FeLogin {
 
@@ -76,6 +77,9 @@ namespace FeLogin {
 	private: System::Windows::Forms::Button^ btnCancelar;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::LinkLabel^ linkLabel2;
+
 
 	protected:
 
@@ -165,6 +169,8 @@ namespace FeLogin {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(formulario::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnCancelar = (gcnew System::Windows::Forms::Button());
@@ -199,38 +205,66 @@ namespace FeLogin {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->linkLabel2);
+			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->linkLabel1);
-			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->btnCancelar);
 			this->panel1->Controls->Add(this->button1);
+			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->panel3);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(231, 527);
+			this->panel1->Size = System::Drawing::Size(231, 462);
 			this->panel1->TabIndex = 0;
+			// 
+			// linkLabel2
+			// 
+			this->linkLabel2->AutoSize = true;
+			this->linkLabel2->Location = System::Drawing::Point(106, 353);
+			this->linkLabel2->Name = L"linkLabel2";
+			this->linkLabel2->Size = System::Drawing::Size(71, 13);
+			this->linkLabel2->TabIndex = 195;
+			this->linkLabel2->TabStop = true;
+			this->linkLabel2->Text = L"Presione aqui";
+			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &formulario::linkLabel2_LinkClicked);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(32, 307);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(161, 60);
+			this->label2->TabIndex = 194;
+			this->label2->Text = L"         Datos Especiales\r\nEstos datos se utilizarán\r\npara la validación de usuar"
+				L"io\r\n(Obligatorio).\r\n";
+			this->label2->Click += gcnew System::EventHandler(this, &formulario::label2_Click);
 			// 
 			// linkLabel1
 			// 
 			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(68, 354);
+			this->linkLabel1->Location = System::Drawing::Point(106, 414);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(72, 13);
+			this->linkLabel1->Size = System::Drawing::Size(71, 13);
 			this->linkLabel1->TabIndex = 193;
 			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"Precione aqui";
+			this->linkLabel1->Text = L"Presione aqui";
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &formulario::linkLabel1_LinkClicked);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(12, 318);
+			this->label1->Location = System::Drawing::Point(35, 382);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(163, 51);
+			this->label1->Size = System::Drawing::Size(142, 45);
 			this->label1->TabIndex = 192;
 			this->label1->Text = L"Si ya llenó estos campos \r\ndirige se al formulario \r\nen ínea ";
 			// 
@@ -270,9 +304,9 @@ namespace FeLogin {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->ImageLocation = L"C:\\Users\\Usuario\\source\\repos\\FeLogin\\img\\zz.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\zz.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
-			this->pictureBox2->Location = System::Drawing::Point(46, 42);
+			this->pictureBox2->Location = System::Drawing::Point(49, 33);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(128, 132);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -303,12 +337,13 @@ namespace FeLogin {
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel2->Location = System::Drawing::Point(231, 0);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(570, 527);
+			this->panel2->Size = System::Drawing::Size(560, 462);
 			this->panel2->TabIndex = 1;
+			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &formulario::panel2_Paint);
 			// 
 			// numEdad
 			// 
-			this->numEdad->Location = System::Drawing::Point(246, 296);
+			this->numEdad->Location = System::Drawing::Point(250, 274);
 			this->numEdad->Name = L"numEdad";
 			this->numEdad->Size = System::Drawing::Size(95, 20);
 			this->numEdad->TabIndex = 191;
@@ -317,7 +352,7 @@ namespace FeLogin {
 			// 
 			this->cboSexo->FormattingEnabled = true;
 			this->cboSexo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"M", L"F" });
-			this->cboSexo->Location = System::Drawing::Point(413, 295);
+			this->cboSexo->Location = System::Drawing::Point(417, 273);
 			this->cboSexo->Name = L"cboSexo";
 			this->cboSexo->Size = System::Drawing::Size(95, 21);
 			this->cboSexo->TabIndex = 190;
@@ -327,7 +362,7 @@ namespace FeLogin {
 			this->txtDireccion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtDireccion->ForeColor = System::Drawing::Color::Gray;
-			this->txtDireccion->Location = System::Drawing::Point(246, 372);
+			this->txtDireccion->Location = System::Drawing::Point(250, 350);
 			this->txtDireccion->Name = L"txtDireccion";
 			this->txtDireccion->Size = System::Drawing::Size(262, 25);
 			this->txtDireccion->TabIndex = 186;
@@ -337,7 +372,7 @@ namespace FeLogin {
 			this->txtTelefono->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtTelefono->ForeColor = System::Drawing::Color::Gray;
-			this->txtTelefono->Location = System::Drawing::Point(246, 332);
+			this->txtTelefono->Location = System::Drawing::Point(250, 310);
 			this->txtTelefono->Name = L"txtTelefono";
 			this->txtTelefono->Size = System::Drawing::Size(262, 25);
 			this->txtTelefono->TabIndex = 185;
@@ -347,7 +382,7 @@ namespace FeLogin {
 			this->txtApellido2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtApellido2->ForeColor = System::Drawing::Color::Gray;
-			this->txtApellido2->Location = System::Drawing::Point(246, 256);
+			this->txtApellido2->Location = System::Drawing::Point(250, 234);
 			this->txtApellido2->Name = L"txtApellido2";
 			this->txtApellido2->Size = System::Drawing::Size(262, 25);
 			this->txtApellido2->TabIndex = 184;
@@ -357,7 +392,7 @@ namespace FeLogin {
 			this->txtApellido1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtApellido1->ForeColor = System::Drawing::Color::Gray;
-			this->txtApellido1->Location = System::Drawing::Point(246, 216);
+			this->txtApellido1->Location = System::Drawing::Point(250, 194);
 			this->txtApellido1->Name = L"txtApellido1";
 			this->txtApellido1->Size = System::Drawing::Size(262, 25);
 			this->txtApellido1->TabIndex = 183;
@@ -367,7 +402,7 @@ namespace FeLogin {
 			this->txtNombre2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtNombre2->ForeColor = System::Drawing::Color::Gray;
-			this->txtNombre2->Location = System::Drawing::Point(246, 176);
+			this->txtNombre2->Location = System::Drawing::Point(250, 154);
 			this->txtNombre2->Name = L"txtNombre2";
 			this->txtNombre2->Size = System::Drawing::Size(262, 25);
 			this->txtNombre2->TabIndex = 182;
@@ -377,7 +412,7 @@ namespace FeLogin {
 			this->txtNombre1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtNombre1->ForeColor = System::Drawing::Color::Gray;
-			this->txtNombre1->Location = System::Drawing::Point(246, 140);
+			this->txtNombre1->Location = System::Drawing::Point(250, 118);
 			this->txtNombre1->Name = L"txtNombre1";
 			this->txtNombre1->Size = System::Drawing::Size(262, 25);
 			this->txtNombre1->TabIndex = 181;
@@ -387,7 +422,7 @@ namespace FeLogin {
 			this->txtDpi->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtDpi->ForeColor = System::Drawing::Color::Gray;
-			this->txtDpi->Location = System::Drawing::Point(246, 100);
+			this->txtDpi->Location = System::Drawing::Point(250, 78);
 			this->txtDpi->Name = L"txtDpi";
 			this->txtDpi->Size = System::Drawing::Size(262, 25);
 			this->txtDpi->TabIndex = 180;
@@ -399,7 +434,7 @@ namespace FeLogin {
 			this->lbdpi->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbdpi->ForeColor = System::Drawing::Color::White;
-			this->lbdpi->Location = System::Drawing::Point(74, 100);
+			this->lbdpi->Location = System::Drawing::Point(78, 78);
 			this->lbdpi->Name = L"lbdpi";
 			this->lbdpi->Size = System::Drawing::Size(34, 17);
 			this->lbdpi->TabIndex = 179;
@@ -412,7 +447,7 @@ namespace FeLogin {
 			this->lb1nombre->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lb1nombre->ForeColor = System::Drawing::Color::White;
-			this->lb1nombre->Location = System::Drawing::Point(75, 140);
+			this->lb1nombre->Location = System::Drawing::Point(79, 118);
 			this->lb1nombre->Name = L"lb1nombre";
 			this->lb1nombre->Size = System::Drawing::Size(107, 17);
 			this->lb1nombre->TabIndex = 178;
@@ -425,7 +460,7 @@ namespace FeLogin {
 			this->lb2nombre->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lb2nombre->ForeColor = System::Drawing::Color::White;
-			this->lb2nombre->Location = System::Drawing::Point(74, 179);
+			this->lb2nombre->Location = System::Drawing::Point(78, 157);
 			this->lb2nombre->Name = L"lb2nombre";
 			this->lb2nombre->Size = System::Drawing::Size(120, 17);
 			this->lb2nombre->TabIndex = 177;
@@ -438,7 +473,7 @@ namespace FeLogin {
 			this->lb1apellido->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lb1apellido->ForeColor = System::Drawing::Color::White;
-			this->lb1apellido->Location = System::Drawing::Point(75, 219);
+			this->lb1apellido->Location = System::Drawing::Point(79, 197);
 			this->lb1apellido->Name = L"lb1apellido";
 			this->lb1apellido->Size = System::Drawing::Size(109, 17);
 			this->lb1apellido->TabIndex = 176;
@@ -451,7 +486,7 @@ namespace FeLogin {
 			this->lb2apellido->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lb2apellido->ForeColor = System::Drawing::Color::White;
-			this->lb2apellido->Location = System::Drawing::Point(74, 256);
+			this->lb2apellido->Location = System::Drawing::Point(78, 234);
 			this->lb2apellido->Name = L"lb2apellido";
 			this->lb2apellido->Size = System::Drawing::Size(126, 17);
 			this->lb2apellido->TabIndex = 175;
@@ -464,7 +499,7 @@ namespace FeLogin {
 			this->lbedad->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbedad->ForeColor = System::Drawing::Color::White;
-			this->lbedad->Location = System::Drawing::Point(74, 295);
+			this->lbedad->Location = System::Drawing::Point(78, 273);
 			this->lbedad->Name = L"lbedad";
 			this->lbedad->Size = System::Drawing::Size(42, 17);
 			this->lbedad->TabIndex = 174;
@@ -477,7 +512,7 @@ namespace FeLogin {
 			this->lbsexosi->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbsexosi->ForeColor = System::Drawing::Color::White;
-			this->lbsexosi->Location = System::Drawing::Point(366, 298);
+			this->lbsexosi->Location = System::Drawing::Point(370, 276);
 			this->lbsexosi->Name = L"lbsexosi";
 			this->lbsexosi->Size = System::Drawing::Size(41, 17);
 			this->lbsexosi->TabIndex = 173;
@@ -490,7 +525,7 @@ namespace FeLogin {
 			this->lbtelefono->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbtelefono->ForeColor = System::Drawing::Color::White;
-			this->lbtelefono->Location = System::Drawing::Point(74, 335);
+			this->lbtelefono->Location = System::Drawing::Point(78, 313);
 			this->lbtelefono->Name = L"lbtelefono";
 			this->lbtelefono->Size = System::Drawing::Size(66, 17);
 			this->lbtelefono->TabIndex = 172;
@@ -503,7 +538,7 @@ namespace FeLogin {
 			this->lbdireccion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbdireccion->ForeColor = System::Drawing::Color::White;
-			this->lbdireccion->Location = System::Drawing::Point(74, 372);
+			this->lbdireccion->Location = System::Drawing::Point(78, 350);
 			this->lbdireccion->Name = L"lbdireccion";
 			this->lbdireccion->Size = System::Drawing::Size(70, 17);
 			this->lbdireccion->TabIndex = 171;
@@ -514,7 +549,7 @@ namespace FeLogin {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
-			this->ClientSize = System::Drawing::Size(801, 527);
+			this->ClientSize = System::Drawing::Size(791, 462);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -574,6 +609,18 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 	
 	System::Diagnostics::Process::Start("chrome.exe", "https://docs.google.com/forms/d/e/1FAIpQLSd_BNFCBme_XeeeUO1dv1IX1Fn4N84GgElizNpskced-IEOAA/viewform");
+}
+private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	//inicio::Close();//cerramos un formulario
+//inicio::Visible = false;//cerramos un formulario
+	FeLogin::verificacion^ verif = gcnew FeLogin::verificacion();
+	verif->Show();
 }
 };
 }

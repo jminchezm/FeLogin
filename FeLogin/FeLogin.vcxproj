@@ -123,6 +123,7 @@
     <ClCompile Include="Conexion.cpp" />
     <ClCompile Include="formulario.cpp" />
     <ClCompile Include="inicio.cpp" />
+    <ClCompile Include="verificacion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Conexion.h" />
@@ -132,6 +133,9 @@
     <ClInclude Include="inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="verificacion.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="formulario.resx">
@@ -139,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="verificacion.resx">
+      <DependentUpon>verificacion.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

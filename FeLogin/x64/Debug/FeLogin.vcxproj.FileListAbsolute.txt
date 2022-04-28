@@ -24,3 +24,5 @@ C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resourc
 C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.inicio.resources
 C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateResource.cache
 C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resources
+C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resources
+C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.verificacion.resources

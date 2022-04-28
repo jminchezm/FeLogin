@@ -102,8 +102,8 @@ namespace FeLogin {
 			this->txtContraseña = (gcnew System::Windows::Forms::TextBox());
 			this->lblIntrucciones = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -176,7 +176,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\Source\\Repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -184,10 +184,11 @@ namespace FeLogin {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 8;
 			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &inicio::pictureBox2_Click);
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\Usuario\\source\\repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -324,26 +325,26 @@ namespace FeLogin {
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel1_Paint);
 			// 
-			// linkLabel1
-			// 
-			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(145, 299);
-			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(74, 13);
-			this->linkLabel1->TabIndex = 9;
-			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"Precione aquí";
-			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &inicio::linkLabel1_LinkClicked_1);
-			// 
 			// pictureBox3
 			// 
-			this->pictureBox3->ImageLocation = L"C:\\Users\\Usuario\\Source\\Repos\\FeLogin\\img\\logo.png";
+			this->pictureBox3->ImageLocation = L"C:\\Users\\johnychiroy\\Source\\Repos\\FeLogin\\img\\logo.png";
 			this->pictureBox3->Location = System::Drawing::Point(46, 8);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(203, 197);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 10;
 			this->pictureBox3->TabStop = false;
+			// 
+			// linkLabel1
+			// 
+			this->linkLabel1->AutoSize = true;
+			this->linkLabel1->Location = System::Drawing::Point(145, 299);
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->Size = System::Drawing::Size(73, 13);
+			this->linkLabel1->TabIndex = 9;
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->Text = L"Presione aquí";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &inicio::linkLabel1_LinkClicked_1);
 			// 
 			// inicio
 			// 
@@ -433,6 +434,8 @@ private: System::Void linkLabel1_LinkClicked_1(System::Object^ sender, System::W
 	//inicio::Visible = false;//cerramos un formulario
 	FeLogin::formulario^ formu = gcnew FeLogin::formulario();
 	formu->Show();
+}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
