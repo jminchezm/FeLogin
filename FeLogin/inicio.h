@@ -1,5 +1,6 @@
 #pragma once
 #include "formulario.h"
+#include "firmaElectronica.h"
 
 namespace FeLogin {
 
@@ -39,7 +40,8 @@ namespace FeLogin {
 	protected:
 
 	private: System::Windows::Forms::Label^ lblUsuario;
-	private: System::Windows::Forms::TextBox^ txtContraseña;
+	private: System::Windows::Forms::TextBox^ txtContra;
+
 	private: System::Windows::Forms::TextBox^ txtUsuario;
 	private: System::Windows::Forms::Label^ lblContraseña;
 	private: System::Windows::Forms::Label^ lblLogin;
@@ -99,7 +101,7 @@ namespace FeLogin {
 			this->lblLogin = (gcnew System::Windows::Forms::Label());
 			this->lblContraseña = (gcnew System::Windows::Forms::Label());
 			this->lblUsuario = (gcnew System::Windows::Forms::Label());
-			this->txtContraseña = (gcnew System::Windows::Forms::TextBox());
+			this->txtContra = (gcnew System::Windows::Forms::TextBox());
 			this->lblIntrucciones = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
@@ -137,7 +139,7 @@ namespace FeLogin {
 			this->panel2->Controls->Add(this->lblLogin);
 			this->panel2->Controls->Add(this->lblContraseña);
 			this->panel2->Controls->Add(this->lblUsuario);
-			this->panel2->Controls->Add(this->txtContraseña);
+			this->panel2->Controls->Add(this->txtContra);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Right;
 			this->panel2->Location = System::Drawing::Point(315, 0);
 			this->panel2->Name = L"panel2";
@@ -176,7 +178,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\Source\\Repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -188,7 +190,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -283,18 +285,18 @@ namespace FeLogin {
 			this->lblUsuario->Text = L"Usuario";
 			this->lblUsuario->Click += gcnew System::EventHandler(this, &inicio::lblUsuario_Click);
 			// 
-			// txtContraseña
+			// txtContra
 			// 
-			this->txtContraseña->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtContra->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtContraseña->ForeColor = System::Drawing::Color::Gray;
-			this->txtContraseña->Location = System::Drawing::Point(106, 246);
-			this->txtContraseña->Multiline = true;
-			this->txtContraseña->Name = L"txtContraseña";
-			this->txtContraseña->PasswordChar = '*';
-			this->txtContraseña->Size = System::Drawing::Size(235, 34);
-			this->txtContraseña->TabIndex = 1;
-			this->txtContraseña->TextChanged += gcnew System::EventHandler(this, &inicio::txtContraseña_TextChanged);
+			this->txtContra->ForeColor = System::Drawing::Color::Gray;
+			this->txtContra->Location = System::Drawing::Point(106, 246);
+			this->txtContra->Multiline = true;
+			this->txtContra->Name = L"txtContra";
+			this->txtContra->PasswordChar = '*';
+			this->txtContra->Size = System::Drawing::Size(235, 34);
+			this->txtContra->TabIndex = 1;
+			this->txtContra->TextChanged += gcnew System::EventHandler(this, &inicio::txtContraseña_TextChanged);
 			// 
 			// lblIntrucciones
 			// 
@@ -327,7 +329,7 @@ namespace FeLogin {
 			// 
 			// pictureBox3
 			// 
-			this->pictureBox3->ImageLocation = L"C:\\Users\\johnychiroy\\Source\\Repos\\FeLogin\\img\\logo.png";
+			this->pictureBox3->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\logo.png";
 			this->pictureBox3->Location = System::Drawing::Point(46, 8);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(203, 197);
@@ -404,22 +406,49 @@ private: System::Void btnsalir_Click(System::Object^ sender, System::EventArgs^ 
 	Application::Exit();
 }
 private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (txtUsuario-> Text == "miguel")
+	bool result1;
+	bool result2 = false;
+	SqlConnection^ cn;
+	SqlConnectionStringBuilder^ st;
+	String^ correo; String^ contra;
+	st = gcnew SqlConnectionStringBuilder();
+	st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+	st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
+	st->IntegratedSecurity = true;
+	cn = gcnew SqlConnection(Convert::ToString(st));
+	ListView^ Bio = gcnew ListView();
+	String^ sentencia = "SELECT * FROM USUARIO_ACCESO";
+	SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+	cn->Open();
+	SqlDataReader^ reader = ejecutar->ExecuteReader();
+	while (reader->Read())
 	{
-		if (txtContraseña->Text == "miguel777")
-		{
-			Application::Exit();
-		}else
-		{
-			MessageBox::Show("Contraseña Incorrecta o Vampo Vacío","Error");
+		correo = (reader["correo_electronico"]->ToString());
+		contra = (reader["contraseña"]->ToString());
+
+		//MessageBox::Show(correo);
+		//MessageBox::Show(contra);
+
+		if (txtUsuario->Text == correo && txtContra->Text == contra) {
+			FeLogin::firmaElectronica^ form = gcnew FeLogin::firmaElectronica();
+			form->Show();
+			result2 = true;
+		}
+		else {
+			result1 = false;
+
+			//MessageBox::Show("EL USUARIO NO EXISTE");
 		}
 	}
-	else
-	{
-		MessageBox::Show("Usuario Incorrecto o Campo Vacío", "Error");
-		
-		
+
+	if (result1 == false && result2 == false) {
+		MessageBox::Show("EL USUARIO NO EXISTE");
 	}
+
+	cn->Close();
+
+	txtUsuario->Text = "";
+	txtContra->Text = "";
 }
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 

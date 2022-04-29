@@ -110,46 +110,42 @@ namespace FeLogin {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(219, 158);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold));
+			this->label2->Location = System::Drawing::Point(216, 168);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(106, 15);
+			this->label2->Size = System::Drawing::Size(113, 17);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Deporte Favorito:";
+			this->label2->Text = L"Deporte Favorito";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(219, 199);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold));
+			this->label3->Location = System::Drawing::Point(216, 209);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(88, 15);
+			this->label3->Size = System::Drawing::Size(96, 17);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Color Favorito:";
+			this->label3->Text = L"Color Favorito";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(219, 241);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold));
+			this->label4->Location = System::Drawing::Point(216, 251);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(122, 15);
+			this->label4->Size = System::Drawing::Size(132, 17);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Nombre de Mascota:";
+			this->label4->Text = L"Nombre de Mascota";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(219, 290);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold));
+			this->label5->Location = System::Drawing::Point(216, 300);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(108, 15);
+			this->label5->Size = System::Drawing::Size(116, 17);
 			this->label5->TabIndex = 4;
-			this->label5->Text = L"Fecha importante:";
+			this->label5->Text = L"Fecha importante";
 			// 
 			// btSalir
 			// 
@@ -166,13 +162,12 @@ namespace FeLogin {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(219, 114);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold));
+			this->label6->Location = System::Drawing::Point(216, 124);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(110, 15);
+			this->label6->Size = System::Drawing::Size(100, 17);
 			this->label6->TabIndex = 10;
-			this->label6->Text = L"Código de Usuario:";
+			this->label6->Text = L"Dpi de Usuario";
 			// 
 			// button1
 			// 
@@ -190,7 +185,7 @@ namespace FeLogin {
 			// 
 			this->txtCodigo->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtCodigo->Location = System::Drawing::Point(346, 111);
+			this->txtCodigo->Location = System::Drawing::Point(367, 120);
 			this->txtCodigo->Name = L"txtCodigo";
 			this->txtCodigo->Size = System::Drawing::Size(242, 23);
 			this->txtCodigo->TabIndex = 13;
@@ -199,7 +194,7 @@ namespace FeLogin {
 			// 
 			this->txtDeporte->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtDeporte->Location = System::Drawing::Point(346, 155);
+			this->txtDeporte->Location = System::Drawing::Point(367, 164);
 			this->txtDeporte->Name = L"txtDeporte";
 			this->txtDeporte->Size = System::Drawing::Size(242, 23);
 			this->txtDeporte->TabIndex = 14;
@@ -208,7 +203,7 @@ namespace FeLogin {
 			// 
 			this->txtColor->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtColor->Location = System::Drawing::Point(346, 196);
+			this->txtColor->Location = System::Drawing::Point(367, 205);
 			this->txtColor->Name = L"txtColor";
 			this->txtColor->Size = System::Drawing::Size(242, 23);
 			this->txtColor->TabIndex = 15;
@@ -217,7 +212,7 @@ namespace FeLogin {
 			// 
 			this->txtMascota->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtMascota->Location = System::Drawing::Point(346, 238);
+			this->txtMascota->Location = System::Drawing::Point(367, 247);
 			this->txtMascota->Name = L"txtMascota";
 			this->txtMascota->Size = System::Drawing::Size(242, 23);
 			this->txtMascota->TabIndex = 16;
@@ -226,7 +221,7 @@ namespace FeLogin {
 			// 
 			this->txtFecha->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtFecha->Location = System::Drawing::Point(346, 287);
+			this->txtFecha->Location = System::Drawing::Point(367, 296);
 			this->txtFecha->Name = L"txtFecha";
 			this->txtFecha->Size = System::Drawing::Size(242, 23);
 			this->txtFecha->TabIndex = 17;

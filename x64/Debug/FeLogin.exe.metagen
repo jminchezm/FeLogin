@@ -1,3 +1,4 @@
+  FeLogin.firmaElectronica.resources - Embedded, ContainedInManifestFile, 
   FeLogin.formulario.resources - Embedded, ContainedInManifestFile, 
   FeLogin.inicio.resources - Embedded, ContainedInManifestFile, 
   FeLogin.verificacion.resources - Embedded, ContainedInManifestFile, 
@@ -16,6 +17,9 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class FeLogin.firmaElectronica: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FeLogin.verificacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

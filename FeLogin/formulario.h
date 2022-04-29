@@ -172,9 +172,9 @@ namespace FeLogin {
 			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnCancelar = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -255,19 +255,6 @@ namespace FeLogin {
 			this->linkLabel1->Text = L"Presione aqui";
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &formulario::linkLabel1_LinkClicked);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(35, 382);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(142, 45);
-			this->label1->TabIndex = 192;
-			this->label1->Text = L"Si ya llenó estos campos \r\ndirige se al formulario \r\nen ínea ";
-			// 
 			// btnCancelar
 			// 
 			this->btnCancelar->Dock = System::Windows::Forms::DockStyle::Top;
@@ -292,6 +279,19 @@ namespace FeLogin {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &formulario::button1_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Black;
+			this->label1->Location = System::Drawing::Point(35, 382);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(142, 45);
+			this->label1->TabIndex = 192;
+			this->label1->Text = L"Si ya llenó estos campos \r\ndirige se al formulario \r\nen ínea ";
+			// 
 			// panel3
 			// 
 			this->panel3->Controls->Add(this->pictureBox2);
@@ -304,7 +304,7 @@ namespace FeLogin {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\zz.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\zz.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(49, 33);
 			this->pictureBox2->Name = L"pictureBox2";

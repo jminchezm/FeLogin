@@ -1,8 +1,7 @@
-﻿  formulario.cpp
-C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\formulario.h(589,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
+﻿  firmaElectronica.cpp
   inicio.cpp
-C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\formulario.h(589,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
-  verificacion.cpp
+C:\Users\josue\source\repos\FeLogin\FeLogin\Conexion.h(24,20): warning C4129: 'S': secuencia de escape de carácter no reconocida
+C:\Users\josue\source\repos\FeLogin\FeLogin\formulario.h(589,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
   Generando código...
   Conexion.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  FeLogin.vcxproj -> C:\Users\johnychiroy\source\repos\FeLogin\x64\Debug\FeLogin.exe
+  FeLogin.vcxproj -> C:\Users\josue\source\repos\FeLogin\x64\Debug\FeLogin.exe

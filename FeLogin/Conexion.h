@@ -21,7 +21,7 @@ protected:
 	void Conectar()
 	{
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "localhost\\SQLEXPRESS"; //"Servidor al que nos conectaremos"
+		st->DataSource = "MÍNCHEZ-JOSHUA\SQLEXPRESS"; //"Servidor al que nos conectaremos"
 		st->InitialCatalog = "FeLogin"; //
 		st->IntegratedSecurity = true;
 
