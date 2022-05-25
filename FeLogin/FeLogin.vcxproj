@@ -124,6 +124,7 @@
     <ClCompile Include="firmaElectronica.cpp" />
     <ClCompile Include="formulario.cpp" />
     <ClCompile Include="inicio.cpp" />
+    <ClCompile Include="terminos.cpp" />
     <ClCompile Include="verificacion.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="inicio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="terminos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="verificacion.h">
@@ -151,9 +155,32 @@
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="terminos.resx">
+      <DependentUpon>terminos.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="verificacion.resx">
       <DependentUpon>verificacion.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib.1.0">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>05bfd3f1-6319-4f30-b752-c7a22889bcc4</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib.1.0">
+      <WrapperTool>aximp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>05bfd3f1-6319-4f30-b752-c7a22889bcc4</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

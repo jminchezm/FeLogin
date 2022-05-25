@@ -1,6 +1,7 @@
 #pragma once
 #include "formulario.h"
 #include "firmaElectronica.h"
+#include "terminos.h"
 
 namespace FeLogin {
 
@@ -62,6 +63,9 @@ namespace FeLogin {
 
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
+
+
+
 
 
 
@@ -178,7 +182,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -190,7 +194,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -329,7 +333,7 @@ namespace FeLogin {
 			// 
 			// pictureBox3
 			// 
-			this->pictureBox3->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\logo.png";
+			this->pictureBox3->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\logo.png";
 			this->pictureBox3->Location = System::Drawing::Point(46, 8);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(203, 197);
@@ -412,7 +416,7 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 	SqlConnectionStringBuilder^ st;
 	String^ correo; String^ contra;
 	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+	st->DataSource = "localhost\\SQLEXPRESS";
 	st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 	st->IntegratedSecurity = true;
 	cn = gcnew SqlConnection(Convert::ToString(st));
@@ -461,10 +465,14 @@ private: System::Void progressBar1_Click(System::Object^ sender, System::EventAr
 private: System::Void linkLabel1_LinkClicked_1(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 	//inicio::Close();//cerramos un formulario
 	//inicio::Visible = false;//cerramos un formulario
-	FeLogin::formulario^ formu = gcnew FeLogin::formulario();
+	FeLogin::terminos^ formu = gcnew FeLogin::terminos();
 	formu->Show();
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	FeLogin::terminos^ formu = gcnew FeLogin::terminos();
+	formu->Show();
 }
 };
 }

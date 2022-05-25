@@ -2,6 +2,7 @@
 //#include "inicio.h"
 #include "Conexion.h"
 #include "verificacion.h"
+
 //#include "winuser.h"
 namespace FeLogin {
 
@@ -304,7 +305,7 @@ namespace FeLogin {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\zz.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\zz.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(49, 33);
 			this->pictureBox2->Name = L"pictureBox2";

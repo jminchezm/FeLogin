@@ -1,6 +1,7 @@
   FeLogin.firmaElectronica.resources - Embedded, ContainedInManifestFile, 
   FeLogin.formulario.resources - Embedded, ContainedInManifestFile, 
   FeLogin.inicio.resources - Embedded, ContainedInManifestFile, 
+  FeLogin.terminos.resources - Embedded, ContainedInManifestFile, 
   FeLogin.verificacion.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly FeLogin, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
@@ -17,6 +18,10 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Assembly Interop.AcroPDFLib.1.0, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly AxInterop.AcroPDFLib.1.0, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
 Class FeLogin.firmaElectronica: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -24,6 +29,9 @@ Class FeLogin.verificacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FeLogin.formulario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FeLogin.terminos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FeLogin.inicio: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
