@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdlib>
 
 namespace FeLogin {
 
@@ -179,40 +180,8 @@ namespace FeLogin {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*SqlConnection^ cn;
-		SqlConnectionStringBuilder^ st;
-		String^ dpi; String^ nombre; String^ direccion;
-		String^ telefono; String^ cuidad;
-		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "localhost\\SQLEXPRESS";
-		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
-		st->IntegratedSecurity = true;
-		cn = gcnew SqlConnection(Convert::ToString(st));
-		String^ sentencia = "SELECT dpi, nombre1, nombre2, apellido1, apellido2 FROM USUARIO WHERE dpi=";
-		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
-		cn->Open();
-		SqlDataReader^ reader = ejecutar->ExecuteReader();
-		while (reader->Read())
-		{
-			id_cliente = (reader["id_cliente"]->ToString());
-			nombre = (reader["nombre"]->ToString());
-			direccion = (reader["direccion"]->ToString());
-			telefono = (reader["telefono"]->ToString());
-			cuidad = (reader["cuidad"]->ToString());
-			String^ srtNew1 = gcnew String(id_cliente);
-			String^ srtNew2 = gcnew String(nombre);
-			String^ srtNew3 = gcnew String(direccion);
-			String^ srtNew4 = gcnew String(telefono);
-			String^ srtNew5 = gcnew String(cuidad);
-			ListViewItem^ listView1 = gcnew Windows::Forms::ListViewItem(srtNew1);
-			listView1->SubItems->Add(srtNew2);
-			listView1->SubItems->Add(srtNew3);
-			listView1->SubItems->Add(srtNew4);
-			listView1->SubItems->Add(srtNew5);
-			this->ListDat->Items->Add(listView1);
-		}
-		cn->Close();*/
-
+		String^ firmaElectronica = Convert::ToString(1000000000000000000 + rand() % (9999999999999999999 - 1000000000000000000));
+		MessageBox::Show(firmaElectronica);
 	}
 };
 }

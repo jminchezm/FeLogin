@@ -183,7 +183,7 @@ namespace FeLogin {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\usuario.gif";
+			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
 			this->pictureBox2->Location = System::Drawing::Point(69, 145);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -195,7 +195,7 @@ namespace FeLogin {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\contrasena.gif";
+			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(69, 246);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -334,7 +334,7 @@ namespace FeLogin {
 			// 
 			// pictureBox3
 			// 
-			this->pictureBox3->ImageLocation = L"C:\\Users\\johnychiroy\\source\\repos\\FeLogin\\img\\logo.png";
+			this->pictureBox3->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\logo.png";
 			this->pictureBox3->Location = System::Drawing::Point(46, 8);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(203, 197);
@@ -411,85 +411,98 @@ private: System::Void btnsalir_Click(System::Object^ sender, System::EventArgs^ 
 	Application::Exit();
 }
 private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArgs^ e) {
-	bool result1;
-	bool result2 = false;
-	SqlConnection^ cn;
-	SqlConnectionStringBuilder^ st;
-	String^ dpi;  String^ contra;
-	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "localhost\\SQLEXPRESS";
-	st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
-	st->IntegratedSecurity = true;
-	cn = gcnew SqlConnection(Convert::ToString(st));
-	String^ sentencia = "SELECT * FROM USUARIO_ACCESO";
-	SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
-	cn->Open();
-	SqlDataReader^ reader = ejecutar->ExecuteReader();
-	while (reader->Read())
-	{
-		dpi = (reader["dpi"]->ToString());
-		contra = (reader["contraseña"]->ToString());
+		bool result1;
+		bool result2 = false;
+		SqlConnection^ cn;
+		SqlConnectionStringBuilder^ st;
+		String^ dpi; String^ contra;
+		st = gcnew SqlConnectionStringBuilder();
+		st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
+		st->IntegratedSecurity = true;
+		cn = gcnew SqlConnection(Convert::ToString(st));
+		String^ sentencia = "SELECT * FROM USUARIO_ACCESO";
+		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+		cn->Open();
+		SqlDataReader^ reader = ejecutar->ExecuteReader();
+		while (reader->Read())
+		{
+			dpi = (reader["dpi"]->ToString());
+			contra = (reader["contraseña"]->ToString());
 
-		//MessageBox::Show(correo);
-		//MessageBox::Show(contra);
+			//MessageBox::Show(correo);
+			//MessageBox::Show(contra);
 
-		if (txtUsuario->Text == dpi && txtContra->Text == contra) {
-			FeLogin::mostrarfirma^ formumostrarfirma = gcnew FeLogin::mostrarfirma();
-			
-			//formu->Show();
-			//FeLogin::firmaElectronica^ form = gcnew FeLogin::firmaElectronica();
-			//form->Show();
-			
-			result2 = true;
-
-			//String^ dpi;  String^ contra;
-			String^ sentencia = "SELECT * FROM USUARIO WHERE dpi= "+dpi;
-			MessageBox::Show(dpi);
-			SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
-			//cn->Open();
-			//reader = ejecutar->ExecuteReader();
-			while (reader->Read())
-			{
-				formumostrarfirma->lbldpi->Text = reader["dpi"]->ToString();
-				MessageBox::Show(reader["dpi"]->ToString());
-				MessageBox::Show(reader["nombre1"]->ToString());
-				formumostrarfirma->lblnombres->Text = reader["nombre1"]->ToString(); //+" " + reader["nombre2"]->ToString();
-
-				formumostrarfirma->lblapellidos->Text = reader["apellido1"]->ToString();// +" " + reader["apellido2"]->ToString();
-				formumostrarfirma->lbledad->Text = reader["edad"]->ToString();
-				formumostrarfirma->lbltelefono->Text = reader["telefono"]->ToString();
-				formumostrarfirma->lbldireccion->Text = reader["direccion"]->ToString();
-				formumostrarfirma->Show();
-
-			//	dpi = (reader["dpi"]->ToString());
-
-				//contra = (reader["contraseña"]->ToString());
-
+			if (txtUsuario->Text == dpi && txtContra->Text == contra) {
+				//FeLogin::firmaElectronica^ form = gcnew FeLogin::firmaElectronica();
+				//form->Show();
+				result2 = true;
 			}
+			else {
+				result1 = false;
 
+				//MessageBox::Show("EL USUARIO NO EXISTE");
+			}
+		}
+		cn->Close();
+
+		if (result1 == false && result2 == false) {
+			MessageBox::Show("EL USUARIO NO EXISTE");
 		}
 		else {
-			result1 = false;
-
-			//MessageBox::Show("EL USUARIO NO EXISTE");
+			String^ datoFirma = "";
+		st = gcnew SqlConnectionStringBuilder();
+		st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
+		st->IntegratedSecurity = true;
+		cn = gcnew SqlConnection(Convert::ToString(st));
+		sentencia = "SELECT firma FROM FIRMA WHERE dpi = " + this->txtUsuario->Text;
+		//MessageBox::Show(this->txtUsuario->Text);
+		ejecutar = gcnew SqlCommand(sentencia, cn);
+		cn->Open();
+		reader = ejecutar->ExecuteReader();
+		while (reader->Read())
+		{
+			datoFirma = reader["firma"]->ToString();
+			//MessageBox::Show("Firma " + datoFirma);
 		}
-	}
+		cn->Close();
 
-	if (result1 == false && result2 == false) {
-		MessageBox::Show("EL USUARIO NO EXISTE");
-	}
-
-	cn->Close();
+		if (datoFirma == "") {
+			FeLogin::firmaElectronica^ formFE = gcnew FeLogin::firmaElectronica();
+			formFE->Show();
+		}
+		else {
+			FeLogin::mostrarfirma^ formMF = gcnew FeLogin::mostrarfirma();
+			st = gcnew SqlConnectionStringBuilder();
+			st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+			st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
+			st->IntegratedSecurity = true;
+			cn = gcnew SqlConnection(Convert::ToString(st));
+			sentencia = "SELECT USUARIO.dpi, USUARIO.nombre1, USUARIO.nombre2, USUARIO.apellido1, USUARIO.apellido2, USUARIO.edad, USUARIO.telefono, USUARIO.direccion, FIRMA.firma FROM USUARIO INNER JOIN FIRMA ON USUARIO.dpi = FIRMA.dpi WHERE USUARIO.dpi = " + this->txtUsuario->Text;
+			MessageBox::Show(this->txtUsuario->Text);
+			ejecutar = gcnew SqlCommand(sentencia, cn);
+			cn->Open();
+			reader = ejecutar->ExecuteReader();
+			while (reader->Read())
+			{
+				formMF->lbldpi->Text = reader["dpi"]->ToString();
+				formMF->lblnombres->Text = reader["nombre1"]->ToString() + " " + reader["nombre2"]->ToString();
+				formMF->lblapellidos->Text = reader["apellido1"]->ToString() + " " + reader["apellido2"]->ToString();
+				formMF->lbledad->Text = reader["edad"]->ToString();
+				formMF->lbltelefono->Text = reader["telefono"]->ToString();
+				formMF->lbldireccion->Text = reader["direccion"]->ToString();
+				formMF->lblfirma->Text = reader["firma"]->ToString();
+				formMF->Show();
+			}
+			cn->Close();
+		}
+		}
 
 	txtUsuario->Text = "";
 	txtContra->Text = "";
-
-	
 }
-	   void mostrarf() {
 
-
-	   };
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 
 }
