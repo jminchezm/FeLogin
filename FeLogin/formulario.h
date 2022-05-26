@@ -604,8 +604,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
 
-
-	
+	txtDpi->Text = "";
+	txtNombre1->Text = "";
+	txtNombre2->Text = "";
+	txtApellido1->Text = "";
+	txtApellido2->Text = "";
+	numEdad->Text = "";
+	cboSexo->Text = "";
+	txtTelefono->Text = "";
+	txtDireccion->Text = "";
 }
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 	

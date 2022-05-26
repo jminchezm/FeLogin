@@ -1,8 +1,2 @@
 ﻿  La referencia COM 'AcroPDFLib.1.0' es el ensamblado de interoperabilidad del control ActiveX 'AxAcroPDFLib.1.0' pero estaba marcada para su vinculación por el compilador con la marca /link. Esta referencia COM se tratará como una referencia y no se vinculará.
-  inicio.cpp
-C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\formulario.h(590,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
-  terminos.cpp
-C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\formulario.h(590,196): warning C4244: 'argumento': conversión de '__int64' a 'int'; posible pérdida de datos
-  Generando código...
-  Conexion.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   FeLogin.vcxproj -> C:\Users\johnychiroy\source\repos\FeLogin\x64\Debug\FeLogin.exe

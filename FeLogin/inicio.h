@@ -2,6 +2,7 @@
 #include "formulario.h"
 #include "firmaElectronica.h"
 #include "terminos.h"
+#include "mostrarfirma.h"
 
 namespace FeLogin {
 
@@ -414,29 +415,58 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 	bool result2 = false;
 	SqlConnection^ cn;
 	SqlConnectionStringBuilder^ st;
-	String^ correo; String^ contra;
+	String^ dpi;  String^ contra;
 	st = gcnew SqlConnectionStringBuilder();
 	st->DataSource = "localhost\\SQLEXPRESS";
 	st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 	st->IntegratedSecurity = true;
 	cn = gcnew SqlConnection(Convert::ToString(st));
-	ListView^ Bio = gcnew ListView();
 	String^ sentencia = "SELECT * FROM USUARIO_ACCESO";
 	SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 	cn->Open();
 	SqlDataReader^ reader = ejecutar->ExecuteReader();
 	while (reader->Read())
 	{
-		correo = (reader["correo_electronico"]->ToString());
+		dpi = (reader["dpi"]->ToString());
 		contra = (reader["contraseña"]->ToString());
 
 		//MessageBox::Show(correo);
 		//MessageBox::Show(contra);
 
-		if (txtUsuario->Text == correo && txtContra->Text == contra) {
-			FeLogin::firmaElectronica^ form = gcnew FeLogin::firmaElectronica();
-			form->Show();
+		if (txtUsuario->Text == dpi && txtContra->Text == contra) {
+			FeLogin::mostrarfirma^ formumostrarfirma = gcnew FeLogin::mostrarfirma();
+			
+			//formu->Show();
+			//FeLogin::firmaElectronica^ form = gcnew FeLogin::firmaElectronica();
+			//form->Show();
+			
 			result2 = true;
+
+			//String^ dpi;  String^ contra;
+			String^ sentencia = "SELECT * FROM USUARIO WHERE dpi= "+dpi;
+			MessageBox::Show(dpi);
+			SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+			//cn->Open();
+			//reader = ejecutar->ExecuteReader();
+			while (reader->Read())
+			{
+				formumostrarfirma->lbldpi->Text = reader["dpi"]->ToString();
+				MessageBox::Show(reader["dpi"]->ToString());
+				MessageBox::Show(reader["nombre1"]->ToString());
+				formumostrarfirma->lblnombres->Text = reader["nombre1"]->ToString(); //+" " + reader["nombre2"]->ToString();
+
+				formumostrarfirma->lblapellidos->Text = reader["apellido1"]->ToString();// +" " + reader["apellido2"]->ToString();
+				formumostrarfirma->lbledad->Text = reader["edad"]->ToString();
+				formumostrarfirma->lbltelefono->Text = reader["telefono"]->ToString();
+				formumostrarfirma->lbldireccion->Text = reader["direccion"]->ToString();
+				formumostrarfirma->Show();
+
+			//	dpi = (reader["dpi"]->ToString());
+
+				//contra = (reader["contraseña"]->ToString());
+
+			}
+
 		}
 		else {
 			result1 = false;
@@ -453,7 +483,13 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 
 	txtUsuario->Text = "";
 	txtContra->Text = "";
+
+	
 }
+	   void mostrarf() {
+
+
+	   };
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 
 }

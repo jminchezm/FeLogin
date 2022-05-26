@@ -269,6 +269,12 @@ private: System::Void btSalir_Click(System::Object^ sender, System::EventArgs^ e
 		datosUsuario.insertar2(Convert::ToInt64(txtCodigo->Text), txtDeporte->Text, txtColor->Text, txtMascota->Text, txtFecha->Text);
 
 		MessageBox::Show("Datos ingresados y guardados correctamente", "Registro guardado", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	
+		txtCodigo->Text = "";
+		txtDeporte->Text = "";
+		txtColor->Text = "";
+		txtMascota->Text = "";
+		txtFecha->Text = "";
 	}
 };
 }

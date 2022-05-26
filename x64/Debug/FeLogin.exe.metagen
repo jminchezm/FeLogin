@@ -1,6 +1,7 @@
   FeLogin.firmaElectronica.resources - Embedded, ContainedInManifestFile, 
   FeLogin.formulario.resources - Embedded, ContainedInManifestFile, 
   FeLogin.inicio.resources - Embedded, ContainedInManifestFile, 
+  FeLogin.mostrarfirma.resources - Embedded, ContainedInManifestFile, 
   FeLogin.terminos.resources - Embedded, ContainedInManifestFile, 
   FeLogin.verificacion.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -34,6 +35,17 @@ Class FeLogin.formulario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class FeLogin.terminos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FeLogin.mostrarfirma: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Label lbldpi : Public
+    System.Windows.Forms.Label lblnombres : Public
+    System.Windows.Forms.Label lblapellidos : Public
+    System.Windows.Forms.Label lbledad : Public
+    System.Windows.Forms.Label lbltelefono : Public
+    System.Windows.Forms.Label lbldireccion : Public
+    System.Windows.Forms.Label lblfirma : Public
 Class FeLogin.inicio: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
