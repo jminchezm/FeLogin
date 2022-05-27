@@ -3,7 +3,6 @@
   FeLogin.inicio.resources - Embedded, ContainedInManifestFile, 
   FeLogin.mostrarfirma.resources - Embedded, ContainedInManifestFile, 
   FeLogin.terminos.resources - Embedded, ContainedInManifestFile, 
-  FeLogin.verificacion.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly FeLogin, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
 	hash=SHA1, flags=PublicKey
@@ -23,22 +22,6 @@ Assembly Interop.AcroPDFLib.1.0, Version=1.0.*, Culture=Todos los idiomas (todos
 	hash=None, flags=None
 Assembly AxInterop.AcroPDFLib.1.0, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
 	hash=None, flags=None
-Class FeLogin.firmaElectronica: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.Label lblnombre : Public
-    System.Windows.Forms.Label lbldpi : Public
-    System.Windows.Forms.Label lblfirma : Public
-Class FeLogin.verificacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FeLogin.formulario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FeLogin.terminos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FeLogin.mostrarfirma: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -50,6 +33,19 @@ Class FeLogin.mostrarfirma: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
     System.Windows.Forms.Label lbltelefono : Public
     System.Windows.Forms.Label lbldireccion : Public
     System.Windows.Forms.Label lblfirma : Public
+Class FeLogin.firmaElectronica: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Label lblnombre : Public
+    System.Windows.Forms.Label lbldpi : Public
+    System.Windows.Forms.Label lblfirma : Public
+Class FeLogin.formulario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FeLogin.terminos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FeLogin.inicio: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -124,7 +124,7 @@ namespace FeLogin {
 			this->lblCrearU->Font = (gcnew System::Drawing::Font(L"Segoe UI", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblCrearU->ForeColor = System::Drawing::Color::White;
-			this->lblCrearU->Location = System::Drawing::Point(47, 198);
+			this->lblCrearU->Location = System::Drawing::Point(12, 208);
 			this->lblCrearU->Name = L"lblCrearU";
 			this->lblCrearU->Size = System::Drawing::Size(205, 40);
 			this->lblCrearU->TabIndex = 6;
@@ -146,9 +146,9 @@ namespace FeLogin {
 			this->panel2->Controls->Add(this->lblUsuario);
 			this->panel2->Controls->Add(this->txtContra);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Right;
-			this->panel2->Location = System::Drawing::Point(315, 0);
+			this->panel2->Location = System::Drawing::Point(221, 0);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(476, 462);
+			this->panel2->Size = System::Drawing::Size(378, 437);
 			this->panel2->TabIndex = 1;
 			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel2_Paint);
 			// 
@@ -157,9 +157,9 @@ namespace FeLogin {
 			this->progressBar1->BackColor = System::Drawing::Color::DeepSkyBlue;
 			this->progressBar1->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->progressBar1->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->progressBar1->Location = System::Drawing::Point(0, 459);
+			this->progressBar1->Location = System::Drawing::Point(0, 434);
 			this->progressBar1->Name = L"progressBar1";
-			this->progressBar1->Size = System::Drawing::Size(476, 3);
+			this->progressBar1->Size = System::Drawing::Size(378, 3);
 			this->progressBar1->TabIndex = 10;
 			this->progressBar1->Click += gcnew System::EventHandler(this, &inicio::progressBar1_Click);
 			// 
@@ -172,7 +172,7 @@ namespace FeLogin {
 			this->btnsalir->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnsalir->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->btnsalir->Location = System::Drawing::Point(232, 364);
+			this->btnsalir->Location = System::Drawing::Point(216, 364);
 			this->btnsalir->Margin = System::Windows::Forms::Padding(0);
 			this->btnsalir->Name = L"btnsalir";
 			this->btnsalir->Size = System::Drawing::Size(90, 33);
@@ -185,7 +185,7 @@ namespace FeLogin {
 			// 
 			this->pictureBox2->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\usuario.gif";
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
-			this->pictureBox2->Location = System::Drawing::Point(69, 145);
+			this->pictureBox2->Location = System::Drawing::Point(53, 145);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(31, 31);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -197,7 +197,7 @@ namespace FeLogin {
 			// 
 			this->pictureBox1->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\contrasena.gif";
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(69, 246);
+			this->pictureBox1->Location = System::Drawing::Point(53, 246);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(31, 31);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -209,7 +209,7 @@ namespace FeLogin {
 			this->txtUsuario->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtUsuario->ForeColor = System::Drawing::Color::Gray;
-			this->txtUsuario->Location = System::Drawing::Point(106, 145);
+			this->txtUsuario->Location = System::Drawing::Point(90, 145);
 			this->txtUsuario->Multiline = true;
 			this->txtUsuario->Name = L"txtUsuario";
 			this->txtUsuario->Size = System::Drawing::Size(235, 31);
@@ -225,7 +225,7 @@ namespace FeLogin {
 				static_cast<System::Byte>(0)));
 			this->checkBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->checkBox1->Location = System::Drawing::Point(106, 314);
+			this->checkBox1->Location = System::Drawing::Point(90, 314);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(186, 17);
 			this->checkBox1->TabIndex = 6;
@@ -242,7 +242,7 @@ namespace FeLogin {
 			this->btnIngresar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnIngresar->ForeColor = System::Drawing::Color::White;
-			this->btnIngresar->Location = System::Drawing::Point(121, 364);
+			this->btnIngresar->Location = System::Drawing::Point(105, 364);
 			this->btnIngresar->Margin = System::Windows::Forms::Padding(0);
 			this->btnIngresar->Name = L"btnIngresar";
 			this->btnIngresar->Size = System::Drawing::Size(90, 33);
@@ -258,7 +258,7 @@ namespace FeLogin {
 			this->lblLogin->Font = (gcnew System::Drawing::Font(L"Segoe UI", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblLogin->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->lblLogin->Location = System::Drawing::Point(114, 55);
+			this->lblLogin->Location = System::Drawing::Point(98, 55);
 			this->lblLogin->Name = L"lblLogin";
 			this->lblLogin->Size = System::Drawing::Size(199, 40);
 			this->lblLogin->TabIndex = 4;
@@ -270,7 +270,7 @@ namespace FeLogin {
 			this->lblContraseña->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblContraseña->ForeColor = System::Drawing::Color::Black;
-			this->lblContraseña->Location = System::Drawing::Point(103, 226);
+			this->lblContraseña->Location = System::Drawing::Point(87, 226);
 			this->lblContraseña->Name = L"lblContraseña";
 			this->lblContraseña->Size = System::Drawing::Size(74, 17);
 			this->lblContraseña->TabIndex = 3;
@@ -283,7 +283,7 @@ namespace FeLogin {
 			this->lblUsuario->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblUsuario->ForeColor = System::Drawing::Color::Black;
-			this->lblUsuario->Location = System::Drawing::Point(103, 125);
+			this->lblUsuario->Location = System::Drawing::Point(87, 125);
 			this->lblUsuario->Name = L"lblUsuario";
 			this->lblUsuario->Size = System::Drawing::Size(53, 17);
 			this->lblUsuario->TabIndex = 2;
@@ -295,7 +295,7 @@ namespace FeLogin {
 			this->txtContra->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtContra->ForeColor = System::Drawing::Color::Gray;
-			this->txtContra->Location = System::Drawing::Point(106, 246);
+			this->txtContra->Location = System::Drawing::Point(90, 246);
 			this->txtContra->Multiline = true;
 			this->txtContra->Name = L"txtContra";
 			this->txtContra->PasswordChar = '*';
@@ -309,7 +309,7 @@ namespace FeLogin {
 			this->lblIntrucciones->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblIntrucciones->ForeColor = System::Drawing::Color::White;
-			this->lblIntrucciones->Location = System::Drawing::Point(54, 252);
+			this->lblIntrucciones->Location = System::Drawing::Point(19, 262);
 			this->lblIntrucciones->Name = L"lblIntrucciones";
 			this->lblIntrucciones->Size = System::Drawing::Size(193, 63);
 			this->lblIntrucciones->TabIndex = 7;
@@ -328,16 +328,16 @@ namespace FeLogin {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(791, 462);
+			this->panel1->Size = System::Drawing::Size(599, 437);
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &inicio::panel1_Paint);
 			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->ImageLocation = L"C:\\Users\\josue\\source\\repos\\FeLogin\\img\\logo.png";
-			this->pictureBox3->Location = System::Drawing::Point(46, 8);
+			this->pictureBox3->Location = System::Drawing::Point(23, 26);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(203, 197);
+			this->pictureBox3->Size = System::Drawing::Size(172, 168);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 10;
 			this->pictureBox3->TabStop = false;
@@ -345,7 +345,7 @@ namespace FeLogin {
 			// linkLabel1
 			// 
 			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(145, 299);
+			this->linkLabel1->Location = System::Drawing::Point(110, 309);
 			this->linkLabel1->Name = L"linkLabel1";
 			this->linkLabel1->Size = System::Drawing::Size(73, 13);
 			this->linkLabel1->TabIndex = 9;
@@ -357,7 +357,7 @@ namespace FeLogin {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(791, 462);
+			this->ClientSize = System::Drawing::Size(599, 437);
 			this->ControlBox = false;
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
@@ -417,7 +417,7 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 		SqlConnectionStringBuilder^ st;
 		String^ dpi; String^ contra;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "localhost\\SQLEXPRESS";
+		st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
 		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
@@ -430,18 +430,12 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 			dpi = (reader["dpi"]->ToString());
 			contra = (reader["contraseña"]->ToString());
 
-			//MessageBox::Show(correo);
-			//MessageBox::Show(contra);
-
 			if (txtUsuario->Text == dpi && txtContra->Text == contra) {
-				//FeLogin::firmaElectronica^ form = gcnew FeLogin::firmaElectronica();
-				//form->Show();
 				result2 = true;
 			}
 			else {
 				result1 = false;
 
-				//MessageBox::Show("EL USUARIO NO EXISTE");
 			}
 		}
 		cn->Close();
@@ -457,14 +451,12 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
 		sentencia = "SELECT firma FROM FIRMA WHERE dpi = " + this->txtUsuario->Text;
-		//MessageBox::Show(this->txtUsuario->Text);
 		ejecutar = gcnew SqlCommand(sentencia, cn);
 		cn->Open();
 		reader = ejecutar->ExecuteReader();
 		while (reader->Read())
 		{
 			datoFirma = reader["firma"]->ToString();
-			//MessageBox::Show("Firma " + datoFirma);
 		}
 		cn->Close();
 
@@ -477,7 +469,6 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 			st->IntegratedSecurity = true;
 			cn = gcnew SqlConnection(Convert::ToString(st));
 			sentencia = "select USUARIO.dpi, USUARIO.nombre1, USUARIO.nombre2, USUARIO.apellido1,USUARIO.apellido2 FROM USUARIO WHERE USUARIO.dpi = " + this->txtUsuario->Text;
-			MessageBox::Show(this->txtUsuario->Text);
 			ejecutar = gcnew SqlCommand(sentencia, cn);
 			cn->Open();
 			reader = ejecutar->ExecuteReader();
@@ -486,7 +477,6 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 			{
 				formFE->lbldpi->Text = reader["dpi"]->ToString();
 				formFE->lblnombre->Text = reader["nombre1"]->ToString() + " " + reader["nombre2"]->ToString();
-				//formFE->lblapellidos->Text = reader["apellido1"]->ToString() + " " + reader["apellido2"]->ToString();
 				formFE->Show();
 			}
 			cn->Close();
@@ -500,7 +490,6 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 			st->IntegratedSecurity = true;
 			cn = gcnew SqlConnection(Convert::ToString(st));
 			sentencia = "SELECT USUARIO.dpi, USUARIO.nombre1, USUARIO.nombre2, USUARIO.apellido1, USUARIO.apellido2, USUARIO.edad, USUARIO.telefono, USUARIO.direccion, FIRMA.firma FROM USUARIO INNER JOIN FIRMA ON USUARIO.dpi = FIRMA.dpi WHERE USUARIO.dpi = " + this->txtUsuario->Text;
-			MessageBox::Show(this->txtUsuario->Text);
 			ejecutar = gcnew SqlCommand(sentencia, cn);
 			cn->Open();
 			reader = ejecutar->ExecuteReader();
@@ -513,6 +502,7 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 				formMF->lbltelefono->Text = reader["telefono"]->ToString();
 				formMF->lbldireccion->Text = reader["direccion"]->ToString();
 				formMF->lblfirma->Text = reader["firma"]->ToString();
+				//this->Close();
 				formMF->Show();
 			}
 			cn->Close();

@@ -26,7 +26,6 @@ C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.GenerateRe
 C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resources
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.formulario.resources
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.verificacion.resources
-C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.verificacion.resources
 C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.firmaElectronica.resources
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.firmaElectronica.resources
 C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.ResolveComReference.cache

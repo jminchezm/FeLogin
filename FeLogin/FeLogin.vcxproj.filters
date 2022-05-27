@@ -24,9 +24,6 @@
     <ClCompile Include="Conexion.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="verificacion.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="firmaElectronica.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -45,9 +42,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Conexion.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="verificacion.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="firmaElectronica.h">

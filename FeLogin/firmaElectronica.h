@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdlib>
 #include "Conexion.h"
+#include "mostrarfirma.h"
 namespace FeLogin {
 
 	using namespace System;
@@ -177,35 +178,60 @@ namespace FeLogin {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		Conexion guardarFirma;
 		String^ firmaElectronica = Convert::ToString(1000000000000000000 + rand() % (9999999999999999999 - 1000000000000000000));
-		
-		lblfirma->Text = firmaElectronica;
-		
-		/*SqlConnection^ cn;
+		//Boolean decision = false;
+		SqlConnection^ cn;
 		SqlConnectionStringBuilder^ st;
-
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "localhost\\SQLEXPRESS"; //"Servidor al que nos conectaremos"
-		st->InitialCatalog = "FeLogin"; //
+		st->DataSource = "localhost\\SQLEXPRESS";
+		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 		st->IntegratedSecurity = true;
-
 		cn = gcnew SqlConnection(Convert::ToString(st));
-
-		String^ sentencia = "INSERT INTO FIRMA VALUES (@pdi, @firma)"; //@ se utiliza para uso de parametros
+		String^ sentencia = "SELECT firma FROM FIRMA";
+		//MessageBox::Show(this->txtUsuario->Text);
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
-
-		//recibo el valor de los parametros
-		ejecutar->Parameters->AddWithValue("@codOrden", Convert::ToInt64(lbldpi->Text));//recibo el valor de los parametros
-		ejecutar->Parameters->AddWithValue("@codCombo", Convert::ToInt64(lblfirma->Text));//recibo el valor de los parametros
-
-		//abrir conexion
 		cn->Open();
-		ejecutar->ExecuteNonQuery();
-		//cerrar conexion
-
+		SqlDataReader^ reader = ejecutar->ExecuteReader();
+		while (reader->Read())
+		{
+			if (firmaElectronica == reader["firma"]->ToString()) {
+				while (firmaElectronica == reader["firma"]->ToString()) {
+					firmaElectronica = Convert::ToString(1000000000000000000 + rand() % (9999999999999999999 - 1000000000000000000));
+				}
+				//decision = true;
+			}
+		}
 		cn->Close();
-		MessageBox::Show("se guardo");*/
 
+		lblfirma->Text = firmaElectronica;
+
+		guardarFirma.insertar3(Convert::ToInt64(lbldpi->Text), Convert::ToInt64(lblfirma->Text));
+		
+		FeLogin::mostrarfirma^ formMF = gcnew FeLogin::mostrarfirma();
+		st = gcnew SqlConnectionStringBuilder();
+		st->DataSource = "localhost\\SQLEXPRESS";
+		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
+		st->IntegratedSecurity = true;
+		cn = gcnew SqlConnection(Convert::ToString(st));
+		sentencia = "SELECT USUARIO.dpi, USUARIO.nombre1, USUARIO.nombre2, USUARIO.apellido1, USUARIO.apellido2, USUARIO.edad, USUARIO.telefono, USUARIO.direccion, FIRMA.firma FROM USUARIO INNER JOIN FIRMA ON USUARIO.dpi = FIRMA.dpi WHERE USUARIO.dpi = " + this->lbldpi->Text;
+		//MessageBox::Show(this->txtUsuario->Text);
+		ejecutar = gcnew SqlCommand(sentencia, cn);
+		cn->Open();
+		reader = ejecutar->ExecuteReader();
+		while (reader->Read())
+		{
+			formMF->lbldpi->Text = reader["dpi"]->ToString();
+			formMF->lblnombres->Text = reader["nombre1"]->ToString() + " " + reader["nombre2"]->ToString();
+			formMF->lblapellidos->Text = reader["apellido1"]->ToString() + " " + reader["apellido2"]->ToString();
+			formMF->lbledad->Text = reader["edad"]->ToString();
+			formMF->lbltelefono->Text = reader["telefono"]->ToString();
+			formMF->lbldireccion->Text = reader["direccion"]->ToString();
+			formMF->lblfirma->Text = reader["firma"]->ToString();
+			this->Close();
+			formMF->Show();
+		}
+		cn->Close();
 	}
 		
 

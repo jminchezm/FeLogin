@@ -1,4 +1,5 @@
 #pragma once
+//#include "inicio.h"
 
 namespace FeLogin {
 
@@ -227,7 +228,9 @@ namespace FeLogin {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Close();
+		this->Close();
+		//FeLogin::inicio^ formInicio = gcnew FeLogin::inicio();
+		//formInicio->Show();
 	}
 };
 }

@@ -21,7 +21,7 @@ protected:
 	void Conectar()
 	{
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "localhost\\SQLEXPRESS"; //"Servidor al que nos conectaremos"
+		st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS"; //"Servidor al que nos conectaremos"
 		st->InitialCatalog = "FeLogin"; //
 		st->IntegratedSecurity = true;
 
@@ -74,7 +74,7 @@ public:
 	}
 
 
-	/*void insertar3(int long long dpi, Random firma) {
+	void insertar3(int long long dpi, int long long firma) {
 		Conectar();
 		String^ sentencia = "INSERT INTO FIRMA VALUES (@dpi, @firma)"; //@ se utiliza para uso de parametros
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
@@ -85,9 +85,10 @@ public:
 		//abrir conexion
 		cn->Open();
 		ejecutar->ExecuteNonQuery();
+		MessageBox::Show("FIRMA ELECTRONICA GENERADA CON EXITO", "INFORMACION", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
 		//cerrar conexion
 		cn->Close();
-	}*/
+	}
 };
 

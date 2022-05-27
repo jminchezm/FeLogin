@@ -126,7 +126,6 @@
     <ClCompile Include="inicio.cpp" />
     <ClCompile Include="mostrarfirma.cpp" />
     <ClCompile Include="terminos.cpp" />
-    <ClCompile Include="verificacion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Conexion.h" />
@@ -145,9 +144,6 @@
     <ClInclude Include="terminos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="verificacion.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="firmaElectronica.resx">
@@ -164,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="terminos.resx">
       <DependentUpon>terminos.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="verificacion.resx">
-      <DependentUpon>verificacion.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
