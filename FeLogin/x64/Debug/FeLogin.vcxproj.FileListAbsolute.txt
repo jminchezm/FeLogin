@@ -35,3 +35,8 @@ C:\Users\johnychiroy\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.mostrarfirma
 C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.ResolveComReference.cache
 C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.mostrarfirma.resources
 C:\Users\josue\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.terminos.resources
+C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.vcxproj.ResolveComReference.cache
+C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.firmaElectronica.resources
+C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.mostrarfirma.resources
+C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.terminos.resources
+C:\Users\Usuario\source\repos\FeLogin\FeLogin\x64\Debug\FeLogin.verificacion.resources

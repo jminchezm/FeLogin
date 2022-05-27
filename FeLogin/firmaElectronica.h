@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdlib>
-
+#include "Conexion.h"
 namespace FeLogin {
 
 	using namespace System;
@@ -40,13 +40,21 @@ namespace FeLogin {
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ lblnombre;
-	private: System::Windows::Forms::Label^ lbldpi;
-	private: System::Windows::Forms::Label^ lblfirma;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
+	public: System::Windows::Forms::Label^ lblnombre;
+	private:
+	public: System::Windows::Forms::Label^ lbldpi;
+	public: System::Windows::Forms::Label^ lblfirma;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	public:
+
+
+
+
+
+
+
+
+
 
 	protected:
 
@@ -63,25 +71,26 @@ namespace FeLogin {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(firmaElectronica::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->lblnombre = (gcnew System::Windows::Forms::Label());
 			this->lbldpi = (gcnew System::Windows::Forms::Label());
 			this->lblfirma = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(329, 258);
+			this->button1->BackColor = System::Drawing::Color::LightSeaGreen;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->Location = System::Drawing::Point(272, 479);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(169, 23);
+			this->button1->Size = System::Drawing::Size(186, 32);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Generar Firma Electrónica";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &firmaElectronica::button1_Click);
 			// 
 			// button2
@@ -96,84 +105,72 @@ namespace FeLogin {
 			// lblnombre
 			// 
 			this->lblnombre->AutoSize = true;
-			this->lblnombre->Location = System::Drawing::Point(193, 109);
+			this->lblnombre->BackColor = System::Drawing::Color::Transparent;
+			this->lblnombre->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnombre->Location = System::Drawing::Point(76, 288);
 			this->lblnombre->Name = L"lblnombre";
-			this->lblnombre->Size = System::Drawing::Size(141, 13);
+			this->lblnombre->Size = System::Drawing::Size(17, 16);
 			this->lblnombre->TabIndex = 2;
-			this->lblnombre->Text = L"Johny David Chiroy Guarcax";
+			this->lblnombre->Text = L"--";
 			// 
 			// lbldpi
 			// 
 			this->lbldpi->AutoSize = true;
-			this->lbldpi->Location = System::Drawing::Point(528, 109);
+			this->lbldpi->BackColor = System::Drawing::Color::Transparent;
+			this->lbldpi->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbldpi->Location = System::Drawing::Point(475, 288);
 			this->lbldpi->Name = L"lbldpi";
-			this->lbldpi->Size = System::Drawing::Size(85, 13);
+			this->lbldpi->Size = System::Drawing::Size(17, 16);
 			this->lbldpi->TabIndex = 3;
-			this->lbldpi->Text = L"3108198060701";
+			this->lbldpi->Text = L"--";
+			this->lbldpi->Click += gcnew System::EventHandler(this, &firmaElectronica::lbldpi_Click);
 			// 
 			// lblfirma
 			// 
 			this->lblfirma->AutoSize = true;
-			this->lblfirma->Location = System::Drawing::Point(376, 201);
+			this->lblfirma->BackColor = System::Drawing::Color::Transparent;
+			this->lblfirma->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblfirma->Location = System::Drawing::Point(269, 427);
 			this->lblfirma->Name = L"lblfirma";
-			this->lblfirma->Size = System::Drawing::Size(67, 13);
+			this->lblfirma->Size = System::Drawing::Size(17, 16);
 			this->lblfirma->TabIndex = 4;
-			this->lblfirma->Text = L"0102030405";
+			this->lblfirma->Text = L"--";
+			this->lblfirma->Click += gcnew System::EventHandler(this, &firmaElectronica::lblfirma_Click);
 			// 
-			// label1
+			// pictureBox1
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(370, 31);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(73, 13);
-			this->label1->TabIndex = 5;
-			this->label1->Text = L"BIENVENIDO";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(238, 85);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(47, 13);
-			this->label2->TabIndex = 6;
-			this->label2->Text = L"Nombre ";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(550, 85);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(25, 13);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"DPI";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(370, 172);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(88, 13);
-			this->label4->TabIndex = 8;
-			this->label4->Text = L"Firma Electrónica";
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(671, 1);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(29, 27);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 5;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &firmaElectronica::pictureBox1_Click);
 			// 
 			// firmaElectronica
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(791, 462);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(702, 523);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->lblfirma);
 			this->Controls->Add(this->lbldpi);
 			this->Controls->Add(this->lblnombre);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"firmaElectronica";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"firmaElectronica";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -181,7 +178,47 @@ namespace FeLogin {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ firmaElectronica = Convert::ToString(1000000000000000000 + rand() % (9999999999999999999 - 1000000000000000000));
-		MessageBox::Show(firmaElectronica);
+		
+		lblfirma->Text = firmaElectronica;
+		
+		/*SqlConnection^ cn;
+		SqlConnectionStringBuilder^ st;
+
+		st = gcnew SqlConnectionStringBuilder();
+		st->DataSource = "localhost\\SQLEXPRESS"; //"Servidor al que nos conectaremos"
+		st->InitialCatalog = "FeLogin"; //
+		st->IntegratedSecurity = true;
+
+		cn = gcnew SqlConnection(Convert::ToString(st));
+
+		String^ sentencia = "INSERT INTO FIRMA VALUES (@pdi, @firma)"; //@ se utiliza para uso de parametros
+		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+
+		//recibo el valor de los parametros
+		ejecutar->Parameters->AddWithValue("@codOrden", Convert::ToInt64(lbldpi->Text));//recibo el valor de los parametros
+		ejecutar->Parameters->AddWithValue("@codCombo", Convert::ToInt64(lblfirma->Text));//recibo el valor de los parametros
+
+		//abrir conexion
+		cn->Open();
+		ejecutar->ExecuteNonQuery();
+		//cerrar conexion
+
+		cn->Close();
+		MessageBox::Show("se guardo");*/
+
 	}
+		
+
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	Close();
+}
+private: System::Void lbldpi_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lblfirma_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	Close();
+}
 };
 }

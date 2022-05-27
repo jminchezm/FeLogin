@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cstdlib>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -72,5 +72,22 @@ public:
 		//cerrar conexion
 		cn->Close();
 	}
+
+
+	/*void insertar3(int long long dpi, Random firma) {
+		Conectar();
+		String^ sentencia = "INSERT INTO FIRMA VALUES (@dpi, @firma)"; //@ se utiliza para uso de parametros
+		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+
+		ejecutar->Parameters->AddWithValue("@dpi", dpi);//recibo el valor de los parametros
+		ejecutar->Parameters->AddWithValue("@firma",firma);//recibo el valor de los parametros
+		
+		//abrir conexion
+		cn->Open();
+		ejecutar->ExecuteNonQuery();
+
+		//cerrar conexion
+		cn->Close();
+	}*/
 };
 

@@ -417,7 +417,7 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 		SqlConnectionStringBuilder^ st;
 		String^ dpi; String^ contra;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+		st->DataSource = "localhost\\SQLEXPRESS";
 		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
@@ -452,7 +452,7 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 		else {
 			String^ datoFirma = "";
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+		st->DataSource = "localhost\\SQLEXPRESS";
 		st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
@@ -470,12 +470,32 @@ private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArg
 
 		if (datoFirma == "") {
 			FeLogin::firmaElectronica^ formFE = gcnew FeLogin::firmaElectronica();
-			formFE->Show();
+
+			st = gcnew SqlConnectionStringBuilder();
+			st->DataSource = "localhost\\SQLEXPRESS";
+			st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
+			st->IntegratedSecurity = true;
+			cn = gcnew SqlConnection(Convert::ToString(st));
+			sentencia = "select USUARIO.dpi, USUARIO.nombre1, USUARIO.nombre2, USUARIO.apellido1,USUARIO.apellido2 FROM USUARIO WHERE USUARIO.dpi = " + this->txtUsuario->Text;
+			MessageBox::Show(this->txtUsuario->Text);
+			ejecutar = gcnew SqlCommand(sentencia, cn);
+			cn->Open();
+			reader = ejecutar->ExecuteReader();
+
+			while (reader->Read())
+			{
+				formFE->lbldpi->Text = reader["dpi"]->ToString();
+				formFE->lblnombre->Text = reader["nombre1"]->ToString() + " " + reader["nombre2"]->ToString();
+				//formFE->lblapellidos->Text = reader["apellido1"]->ToString() + " " + reader["apellido2"]->ToString();
+				formFE->Show();
+			}
+			cn->Close();
+
 		}
 		else {
 			FeLogin::mostrarfirma^ formMF = gcnew FeLogin::mostrarfirma();
 			st = gcnew SqlConnectionStringBuilder();
-			st->DataSource = "MÍNCHEZ-JOSHUA\\SQLEXPRESS";
+			st->DataSource = "localhost\\SQLEXPRESS";
 			st->InitialCatalog = "FeLogin";//su base de datos se llama Biosisemas
 			st->IntegratedSecurity = true;
 			cn = gcnew SqlConnection(Convert::ToString(st));

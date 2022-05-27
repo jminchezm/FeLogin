@@ -26,6 +26,10 @@ Assembly AxInterop.AcroPDFLib.1.0, Version=1.0.*, Culture=Todos los idiomas (tod
 Class FeLogin.firmaElectronica: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Label lblnombre : Public
+    System.Windows.Forms.Label lbldpi : Public
+    System.Windows.Forms.Label lblfirma : Public
 Class FeLogin.verificacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
